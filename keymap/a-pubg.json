@@ -6,14 +6,14 @@
       "y": 0.26
     },
     "speedRatioX": 2.5,
-    "speedRatioY": 1.25,
+    "speedRatioY": 2.5,
     "smallEyes": {
       "comment": "小眼睛",
       "type": "KMT_CLICK",
       "key": "Key_Alt",
       "pos": {
-        "x": 0.8,
-        "y": 0.31
+        "x": 0.50,
+        "y": 0.26
       },
       "switchMap": false
     },
@@ -38,21 +38,23 @@
     },
     {
       "comment": "左探头",
-      "type": "KMT_CLICK_TWICE",
+      "type": "KMT_CLICK",
       "key": "Key_Q",
       "pos": {
         "x": 0.12,
         "y": 0.35
-      }
+      },
+      "switchMap": false
     },
     {
       "comment": "右探头",
-      "type": "KMT_CLICK_TWICE",
+      "type": "KMT_CLICK",
       "key": "Key_E",
       "pos": {
         "x": 0.2,
         "y": 0.35
-      }
+      },
+      "switchMap": false
     },
     {
       "comment": "跳",
@@ -67,7 +69,7 @@
     {
       "comment": "地图",
       "type": "KMT_CLICK",
-      "key": "Key_M",
+      "key": "Key_V",
       "pos": {
         "x": 0.98,
         "y": 0.03
@@ -87,7 +89,7 @@
     {
       "comment": "视角",
       "type": "KMT_CLICK",
-      "key": "Key_V",
+      "key": "Key_M",
       "pos": {
         "x": 0.23,
         "y": 0.95
@@ -196,8 +198,8 @@
     },
     {
       "comment": "手雷",
-      "type": "KMT_CLICK",
-      "key": "Key_3",
+      "type": "KMT_ROTARY_TABLE",
+      "key": "Key_4",
       "pos": {
         "x": 0.67,
         "y": 0.92
@@ -206,8 +208,8 @@
     },
     {
       "comment": "快速打药",
-      "type": "KMT_CLICK",
-      "key": "Key_4",
+      "type": "KMT_ROTARY_TABLE",
+      "key": "Key_3",
       "pos": {
         "x": 0.33,
         "y": 0.95
@@ -215,13 +217,14 @@
       "switchMap": false
     },
     {
-      "comment": "下车",
-      "type": "KMT_CLICK",
-      "key": "Key_5",
+      "comment": "定位",
+      "type": "KMT_ROTARY_TABLE",
+      "key": "Key_X",
       "pos": {
-        "x": 0.92,
-        "y": 0.4
+        "x": 0.79,
+        "y": 0.20
       },
+      "speedRatio": 1.0,
       "switchMap": false
     },
     {
@@ -259,10 +262,10 @@
       "type": "KMT_CLICK",
       "key": "Key_F1",
       "pos": {
-        "x": 0.68,
-        "y": 0.85
+        "x": 0.69,
+        "y": 0.92
       },
-      "switchMap": true
+      "switchMap": false
     },
     {
       "comment": "药物菜单",
@@ -272,17 +275,17 @@
         "x": 0.30,
         "y": 0.84
       },
-      "switchMap": true
+      "switchMap": false
     },
     {
       "comment": "消息菜单",
-      "type": "KMT_CLICK",
+      "type": "KMT_ROTARY_TABLE",
       "key": "Key_F3",
       "pos": {
-        "x": 0.98,
-        "y": 0.34
+        "x": 0.84,
+        "y": 0.28
       },
-      "switchMap": true
+      "switchMap": false
     },
     {
       "comment": "表情菜单",
@@ -295,14 +298,14 @@
       "switchMap": true
     },
     {
-      "comment": "开关门",
+      "comment": "取消",
       "type": "KMT_CLICK",
-      "key": "Key_X",
+      "key": "Key_Control",
       "pos": {
-        "x": 0.7,
-        "y": 0.7
+        "x": 0.50,
+        "y": 0.75
       },
-      "switchMap": false
+      "switchMap": true
     },
     {
       "comment": "舔包",
@@ -340,6 +343,16 @@
       "key": "RightButton",
       "pos": {
         "x": 0.96,
+        "y": 0.52
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "肩射",
+      "type": "KMT_CLICK",
+      "key": "BackButton",
+      "pos": {
+        "x": 0.90,
         "y": 0.52
       },
       "switchMap": false

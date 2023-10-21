@@ -76,6 +76,7 @@ void VideoForm::initUI()
     setMouseTracking(true);
     m_videoWidget->setMouseTracking(true);
     ui->keepRatioWidget->setMouseTracking(true);
+    SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_AWAYMODE_REQUIRED);
 }
 
 QRect VideoForm::getGrabCursorRect()

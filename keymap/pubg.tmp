@@ -1,0 +1,10 @@
+    {
+      "comment": "定位",
+      "type": "KMT_CLICK",
+      "key": "Key_Control",
+      "pos": {
+        "x": 0.88,
+        "y": 0.36
+      },
+      "switchMap": false
+    },
