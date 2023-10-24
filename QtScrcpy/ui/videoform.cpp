@@ -76,7 +76,14 @@ void VideoForm::initUI()
     setMouseTracking(true);
     m_videoWidget->setMouseTracking(true);
     ui->keepRatioWidget->setMouseTracking(true);
-    SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_AWAYMODE_REQUIRED);
+#ifdef Q_OS_WIN
+    qDebug()<<"disableHibernation-win";
+    SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED);
+#endif
+#ifdef Q_OS_OSX
+#endif
+#ifdef Q_OS_LINUX
+#endif
 }
 
 QRect VideoForm::getGrabCursorRect()

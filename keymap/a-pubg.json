@@ -2,8 +2,8 @@
   "switchKey": "Key_QuoteLeft",
   "mouseMoveMap": {
     "startPos": {
-      "x": 0.57,
-      "y": 0.26
+      "x": 0.51,
+      "y": 0.25
     },
     "speedRatioX": 2.5,
     "speedRatioY": 2.5,
@@ -13,7 +13,7 @@
       "key": "Key_Alt",
       "pos": {
         "x": 0.50,
-        "y": 0.26
+        "y": 0.35
       },
       "switchMap": false
     },
@@ -134,7 +134,8 @@
         "x": 0.7,
         "y": 0.34
       },
-      "switchMap": false
+      "switchMap": false,
+      "freshMouseMove": true
     },
     {
       "comment": "捡东西2",
@@ -230,10 +231,20 @@
     {
       "comment": "救人",
       "type": "KMT_CLICK",
-      "key": "Key_6",
+      "key": "Key_5",
       "pos": {
         "x": 0.49,
         "y": 0.63
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "救人",
+      "type": "KMT_CLICK",
+      "key": "Key_6",
+      "pos": {
+        "x": 0.68,
+        "y": 0.68
       },
       "switchMap": false
     },
@@ -289,21 +300,21 @@
     },
     {
       "comment": "表情菜单",
-      "type": "KMT_CLICK",
+      "type": "KMT_ROTARY_TABLE",
       "key": "Key_F4",
       "pos": {
         "x": 0.80,
         "y": 0.12
       },
-      "switchMap": true
+      "switchMap": false
     },
     {
-      "comment": "取消",
+      "comment": "鼠标",
       "type": "KMT_CLICK",
       "key": "Key_Control",
       "pos": {
-        "x": 0.50,
-        "y": 0.75
+        "x": 0.30,
+        "y": 0.25
       },
       "switchMap": true
     },
@@ -335,7 +346,8 @@
         "x": 0.86,
         "y": 0.72
       },
-      "switchMap": false
+      "switchMap": false,
+      "freshMouseMove": true
     },
     {
       "comment": "开镜",
@@ -345,7 +357,8 @@
         "x": 0.96,
         "y": 0.52
       },
-      "switchMap": false
+      "switchMap": false,
+      "freshMouseMove": true
     },
     {
       "comment": "肩射",
