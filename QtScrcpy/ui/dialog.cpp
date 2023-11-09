@@ -393,10 +393,10 @@ bool Dialog::filterLog(const QString &log)
 
 bool Dialog::checkAdbRun()
 {
-    if (m_adb.isRuning()) {
+    if (m_adb.isRunning()) {
         outLog("wait for the end of the current command to run");
     }
-    return m_adb.isRuning();
+    return m_adb.isRunning();
 }
 
 void Dialog::on_getIPBtn_clicked()

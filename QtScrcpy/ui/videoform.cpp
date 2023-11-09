@@ -77,7 +77,7 @@ void VideoForm::initUI()
     m_videoWidget->setMouseTracking(true);
     ui->keepRatioWidget->setMouseTracking(true);
 #ifdef Q_OS_WIN
-    qDebug()<<"disableHibernation-win";
+    qDebug() << "disableHibernation-win";
     SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED);
 #endif
 #ifdef Q_OS_OSX
@@ -685,8 +685,17 @@ void VideoForm::wheelEvent(QWheelEvent *event)
         QPointF pos = m_videoWidget->mapFrom(this, event->pos());
 
         QWheelEvent wheelEvent(
-            pos, event->globalPosF(), event->pixelDelta(), event->angleDelta(), event->delta(), event->orientation(),
-            event->buttons(), event->modifiers(), event->phase(), event->source(), event->inverted());
+            pos,
+            event->globalPosF(),
+            event->pixelDelta(),
+            event->angleDelta(),
+            event->delta(),
+            event->orientation(),
+            event->buttons(),
+            event->modifiers(),
+            event->phase(),
+            event->source(),
+            event->inverted());
 #endif
         emit device->wheelEvent(&wheelEvent, m_videoWidget->frameSize(), m_videoWidget->size());
     }
@@ -766,6 +775,9 @@ void VideoForm::closeEvent(QCloseEvent *event)
     }
     Config::getInstance().setRect(device->getSerial(), geometry());
     device->disconnectDevice();
+#ifdef Q_OS_WIN32
+    ::SetThreadExecutionState(ES_CONTINUOUS);
+#endif
 }
 
 void VideoForm::dragEnterEvent(QDragEnterEvent *event)

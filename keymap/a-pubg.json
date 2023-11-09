@@ -84,7 +84,8 @@
         "x": 0.06,
         "y": 0.9
       },
-      "switchMap": true
+      "switchMap": true,
+      "forceSwitchOn": true
     },
     {
       "comment": "视角",
@@ -346,8 +347,7 @@
         "x": 0.86,
         "y": 0.72
       },
-      "switchMap": false,
-      "freshMouseMove": true
+      "switchMap": false
     },
     {
       "comment": "开镜",
