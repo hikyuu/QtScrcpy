@@ -27,14 +27,31 @@
         "x": 0.16,
         "y": 0.75
       },
-      "leftOffset": 0.1,
-      "rightOffset": 0.1,
+      "leftOffset": 0.17,
+      "rightOffset": 0.17,
       "upOffset": 0.27,
       "downOffset": 0.2,
       "leftKey": "Key_A",
       "rightKey": "Key_D",
       "upKey": "Key_W",
-      "downKey": "Key_S"
+      "downKey": "Key_S",
+      "switchKey": "Key_J",
+      "leftClickPos": {
+        "x": 0.65,
+        "y": 0.68
+      },
+      "rightClickPos": {
+        "x": 0.82,
+        "y": 0.68
+      },
+      "upClickPos": {
+        "x": 0.16,
+        "y": 0.52
+      },
+      "downClickPos": {
+        "x": 0.16,
+        "y": 0.77
+      }
     },
     {
       "comment": "左探头",
@@ -122,7 +139,7 @@
       "type": "KMT_CLICK",
       "key": "Key_R",
       "pos": {
-        "x": 0.765,
+        "x": 0.76,
         "y": 0.93
       },
       "switchMap": false
@@ -155,6 +172,16 @@
       "pos": {
         "x": 0.7,
         "y": 0.54
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "第一人称",
+      "type": "KMT_CLICK",
+      "key": "Key_Shift",
+      "pos": {
+        "x": 0.24,
+        "y": 0.93
       },
       "switchMap": false
     },
@@ -195,6 +222,16 @@
       "pos": {
         "x": 0.55,
         "y": 0.85
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "手枪",
+      "type": "KMT_CLICK",
+      "key": "Key_M",
+      "pos": {
+        "x": 0.63,
+        "y": 0.82
       },
       "switchMap": false
     },
@@ -240,32 +277,12 @@
       "switchMap": false
     },
     {
-      "comment": "救人",
+      "comment": "功能键",
       "type": "KMT_CLICK",
       "key": "Key_6",
       "pos": {
         "x": 0.68,
         "y": 0.68
-      },
-      "switchMap": false
-    },
-    {
-      "comment": "手枪",
-      "type": "KMT_CLICK",
-      "key": "Key_7",
-      "pos": {
-        "x": 0.63,
-        "y": 0.82
-      },
-      "switchMap": false
-    },
-    {
-      "comment": "车加速",
-      "type": "KMT_CLICK",
-      "key": "Key_Shift",
-      "pos": {
-        "x": 0.8,
-        "y": 0.8
       },
       "switchMap": false
     },

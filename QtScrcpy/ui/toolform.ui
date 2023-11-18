@@ -18,7 +18,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="topMargin">
-    <number>30</number>
+    <number>9</number>
    </property>
    <item>
     <widget class="QPushButton" name="groupControlBtn">
@@ -34,6 +34,16 @@
     <widget class="QPushButton" name="fullScreenBtn">
      <property name="toolTip">
       <string>full screen</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="maxBtn">
+     <property name="toolTip">
+      <string>窗口等比例最大化</string>
      </property>
      <property name="text">
       <string/>

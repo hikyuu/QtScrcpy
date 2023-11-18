@@ -38,6 +38,7 @@ bool ToolForm::isHost()
 void ToolForm::initStyle()
 {
     IconHelper::Instance()->SetIcon(ui->fullScreenBtn, QChar(0xf0b2), 15);
+    IconHelper::Instance()->SetIcon(ui->maxBtn, QChar(0xf2d0), 15);
     IconHelper::Instance()->SetIcon(ui->menuBtn, QChar(0xf096), 15);
     IconHelper::Instance()->SetIcon(ui->homeBtn, QChar(0xf1db), 15);
     //IconHelper::Instance()->SetIcon(ui->returnBtn, QChar(0xf104), 15);
@@ -106,6 +107,16 @@ void ToolForm::on_fullScreenBtn_clicked()
     }
 
     dynamic_cast<VideoForm*>(parent())->switchFullScreen();
+}
+
+void ToolForm::on_maxBtn_clicked()
+{
+    auto device = qsc::IDeviceManage::getInstance().getDevice(m_serial);
+    if (!device) {
+        return;
+    }
+
+    dynamic_cast<VideoForm *>(parent())->switchMaximumWindow();
 }
 
 void ToolForm::on_returnBtn_clicked()

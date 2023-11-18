@@ -15,9 +15,9 @@
 
 #include "config.h"
 #include "iconhelper.h"
+#include "mousetap/mousetap.h"
 #include "qyuvopenglwidget.h"
 #include "toolform.h"
-#include "mousetap/mousetap.h"
 #include "ui_videoform.h"
 #include "videoform.h"
 
@@ -76,14 +76,6 @@ void VideoForm::initUI()
     setMouseTracking(true);
     m_videoWidget->setMouseTracking(true);
     ui->keepRatioWidget->setMouseTracking(true);
-#ifdef Q_OS_WIN
-    qDebug() << "disableHibernation-win";
-    SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED);
-#endif
-#ifdef Q_OS_OSX
-#endif
-#ifdef Q_OS_LINUX
-#endif
 }
 
 QRect VideoForm::getGrabCursorRect()
@@ -150,7 +142,7 @@ void VideoForm::showFPS(bool show)
     m_fpsLabel->setVisible(show);
 }
 
-void VideoForm::updateRender(int width, int height, uint8_t* dataY, uint8_t* dataU, uint8_t* dataV, int linesizeY, int linesizeU, int linesizeV)
+void VideoForm::updateRender(int width, int height, uint8_t *dataY, uint8_t *dataU, uint8_t *dataV, int linesizeY, int linesizeU, int linesizeV)
 {
     if (m_videoWidget->isHidden()) {
         if (m_loadingWidget) {
@@ -512,6 +504,52 @@ void VideoForm::switchFullScreen()
         }
         showFullScreen();
 
+        // 全屏状态禁止电脑休眠、息屏
+#ifdef Q_OS_WIN32
+        ::SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED);
+#endif
+    }
+}
+
+void VideoForm::switchMaximumWindow()
+{
+    if (m_isMaximum) {
+        // 横屏全屏铺满全屏，恢复时，恢复保持宽高比
+        setWindowFlags(Qt::Window);
+        show();
+        if (m_widthHeightRatio > 1.0f) {
+            ui->keepRatioWidget->setWidthHeightRatio(m_widthHeightRatio);
+        }
+        // back to normal size.
+        resize(m_normalSize);
+        resize(m_normalSize);
+
+        // fullscreen window will move (0,0). qt bug?
+        move(m_fullScreenBeforePos);
+
+        if (m_skin) {
+            updateStyleSheet(m_frameSize.height() > m_frameSize.width());
+        }
+        showToolForm(true);
+#ifdef Q_OS_WIN32
+        ::SetThreadExecutionState(ES_CONTINUOUS);
+#endif
+        m_isMaximum = false;
+    } else {
+        // record current size before fullscreen, it will be used to rollback size after exit fullscreen.
+        m_normalSize = size();
+
+        m_fullScreenBeforePos = pos();
+
+        if (m_skin) {
+            layout()->setContentsMargins(0, 0, 0, 0);
+        }
+        setWindowFlags(Qt::FramelessWindowHint);
+        show();
+        staysOnTop(true);
+        resize(2560, 1440);
+        move(0, 0);
+        m_isMaximum = true;
         // 全屏状态禁止电脑休眠、息屏
 #ifdef Q_OS_WIN32
         ::SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED);

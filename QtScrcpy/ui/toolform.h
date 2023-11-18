@@ -34,6 +34,7 @@ protected:
 
 private slots:
     void on_fullScreenBtn_clicked();
+    void on_maxBtn_clicked();
     void on_returnBtn_clicked();
     void on_homeBtn_clicked();
     void on_menuBtn_clicked();

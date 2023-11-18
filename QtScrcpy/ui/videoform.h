@@ -32,6 +32,7 @@ public:
     void removeBlackRect();
     void showFPS(bool show);
     void switchFullScreen();
+    void switchMaximumWindow();
 
     bool isHost();
 
@@ -83,6 +84,7 @@ private:
     QPoint m_dragPosition;
     float m_widthHeightRatio = 0.5f;
     bool m_skin = true;
+    bool m_isMaximum = false;
     QPoint m_fullScreenBeforePos;
     QString m_serial;
 };
