@@ -574,6 +574,9 @@ void VideoForm::switchMaximumWindow()
 
 bool VideoForm::isHost()
 {
+    if (!m_toolForm) {
+        return false;
+    }
     return m_toolForm->isHost();
 }
 
@@ -789,7 +792,9 @@ void VideoForm::showEvent(QShowEvent *event)
 {
     Q_UNUSED(event)
     if (!isFullScreen()) {
-        showToolForm();
+        QTimer::singleShot(500, this, [this](){
+            showToolForm();
+        });
     }
 }
 
