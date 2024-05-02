@@ -41,7 +41,7 @@ public class ControlMessageReader {
         int head = buffer.position();
         int r = input.read(rawBuffer, head, rawBuffer.length - head);
         if (r == -1) {
-            throw new EOFException("Controller socket closed");
+            throw new EOFException("Controller m_socket closed");
         }
         buffer.position(head + r);
         buffer.flip();

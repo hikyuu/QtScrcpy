@@ -23,12 +23,12 @@
     "comment": "鼠标滚轮映射",
     "gameMode": {
       "startPos": {
-        "x": 0.5,
-        "y": 0.7
+        "x": 0.65,
+        "y": 0.62
       },
       "endPos": {
-        "x": 0.5,
-        "y": 0.3
+        "x": 0.65,
+        "y": 0.51
       }
     },
     "mouseMode": {
@@ -74,8 +74,8 @@
       "type": "KMT_CLICK",
       "key": "Key_Q",
       "pos": {
-        "x": 0.12,
-        "y": 0.35
+        "x": 0.74,
+        "y": 0.60
       },
       "switchMap": false
     },
@@ -84,8 +84,8 @@
       "type": "KMT_CLICK",
       "key": "Key_E",
       "pos": {
-        "x": 0.2,
-        "y": 0.35
+        "x": 0.93,
+        "y": 0.37
       },
       "switchMap": false
     },
@@ -95,7 +95,7 @@
       "key": "Key_Space",
       "pos": {
         "x": 0.96,
-        "y": 0.7
+        "y": 0.71
       },
       "switchMap": false
     },
@@ -135,8 +135,8 @@
       "type": "KMT_CLICK",
       "key": "Key_Z",
       "pos": {
-        "x": 0.95,
-        "y": 0.9
+        "x": 0.94,
+        "y": 0.90
       },
       "switchMap": false
     },
@@ -145,7 +145,7 @@
       "type": "KMT_CLICK",
       "key": "Key_C",
       "pos": {
-        "x": 0.86,
+        "x": 0.85,
         "y": 0.92
       },
       "switchMap": false
@@ -155,8 +155,8 @@
       "type": "KMT_CLICK",
       "key": "Key_R",
       "pos": {
-        "x": 0.76,
-        "y": 0.93
+        "x": 0.77,
+        "y": 0.86
       },
       "switchMap": false
     },
@@ -252,6 +252,26 @@
       "switchMap": false
     },
     {
+      "comment": "投掷物菜单",
+      "type": "KMT_CLICK",
+      "key": "Key_F1",
+      "pos": {
+        "x": 0.69,
+        "y": 0.92
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "药物菜单",
+      "type": "KMT_CLICK",
+      "key": "Key_F2",
+      "pos": {
+        "x": 0.30,
+        "y": 0.84
+      },
+      "switchMap": false
+    },
+    {
       "comment": "鼠标",
       "type": "KMT_CLICK",
       "key": "Key_CapsLock",
@@ -260,7 +280,8 @@
         "y": 0.25
       },
       "switchMap": true
-    },    {
+    },
+    {
       "comment": "背包",
       "type": "KMT_CLICK",
       "key": "Key_Control",
@@ -306,8 +327,8 @@
       "type": "KMT_CLICK",
       "key": "RightButton",
       "pos": {
-        "x": 0.96,
-        "y": 0.52
+        "x": 0.88,
+        "y": 0.55
       },
       "switchMap": false
     },
@@ -316,8 +337,8 @@
       "type": "KMT_CLICK",
       "key": "BackButton",
       "pos": {
-        "x": 0.90,
-        "y": 0.52
+        "x": 0.95,
+        "y": 0.35
       },
       "switchMap": false
     },
@@ -326,8 +347,8 @@
       "type": "KMT_ROTARY_TABLE",
       "key": "Key_4",
       "pos": {
-        "x": 0.67,
-        "y": 0.92
+        "x": 0.69,
+        "y": 0.87
       },
       "switchMap": false
     },

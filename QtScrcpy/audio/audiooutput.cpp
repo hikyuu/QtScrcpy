@@ -149,10 +149,10 @@ void AudioOutput::startRecvData(int port)
     connect(this, &AudioOutput::connectTo, audioSocket, [audioSocket](int port) {
         audioSocket->connectToHost(QHostAddress::LocalHost, port);
         if (!audioSocket->waitForConnected(500)) {
-            qWarning("AudioOutput::audio socket connect failed");
+            qWarning("AudioOutput::audio m_socket connect failed");
             return;
         }
-        qInfo("AudioOutput::audio socket connect success");
+        qInfo("AudioOutput::audio m_socket connect success");
     });
     connect(audioSocket, &QIODevice::readyRead, audioSocket, [this, audioSocket]() {
         qint64 recv = audioSocket->bytesAvailable();
@@ -169,12 +169,11 @@ void AudioOutput::startRecvData(int port)
         m_outputDevice->write(m_buffer.data(), count);
     });
     connect(audioSocket, &QTcpSocket::stateChanged, audioSocket, [](QAbstractSocket::SocketState state) {
-        qInfo() << "AudioOutput::audio socket state changed:" << state;
-
+        qInfo() << "AudioOutput::audio m_socket state changed:" << state;
     });
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
     connect(audioSocket, &QTcpSocket::errorOccurred, audioSocket, [](QAbstractSocket::SocketError error) {
-        qInfo() << "AudioOutput::audio socket error occurred:" << error;
+        qInfo() << "AudioOutput::audio m_socket error occurred:" << error;
     });
 #else
     connect(audioSocket, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), audioSocket, [](QAbstractSocket::SocketError error) {

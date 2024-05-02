@@ -90,7 +90,7 @@ The encoding is managed by [`ScreenEncoder`].
 
 The video is encoded using the [`MediaCodec`] API. The codec takes its input
 from a [surface] associated to the display, and writes the resulting H.264
-stream to the provided output stream (the socket connected to the client).
+stream to the provided output stream (the m_socket connected to the client).
 
 [`ScreenEncoder`]: https://github.com/Genymobile/scrcpy/blob/ffe0417228fb78ab45b7ee4e202fc06fc8875bf3/server/src/main/java/com/genymobile/scrcpy/ScreenEncoder.java
 [`MediaCodec`]: https://developer.android.com/reference/android/media/MediaCodec.html
@@ -158,7 +158,7 @@ Note that the client-server roles are expressed at the application level:
 
 However, the roles are reversed at the network level:
 
- - the client opens a server socket and listen on a port before starting the
+ - the client opens a server m_socket and listen on a port before starting the
    server,
  - the server connects to the client.
 
@@ -199,11 +199,11 @@ print the framerate regularly in the console.
 
 ### Stream
 
-The video [stream] is received from the socket (connected to the server on the
+The video [stream] is received from the m_socket (connected to the server on the
 device) in a separate thread.
 
 If a [decoder] is present (i.e. `--no-display` is not set), then it uses _libav_
-to decode the H.264 stream from the socket, and notifies the main thread when a
+to decode the H.264 stream from the m_socket, and notifies the main thread when a
 new frame is available.
 
 There are two [frames][video_buffer] simultaneously in memory:
@@ -226,7 +226,7 @@ H.264 packet to the output video file.
                                    +----------+      +----------+
                               ---> | decoder  | ---> |  screen  |
              +---------+     /     +----------+      +----------+
- socket ---> | stream  | ----
+ m_socket ---> | stream  | ----
              +---------+     \     +----------+
                               ---> | recorder |
                                    +----------+

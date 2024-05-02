@@ -1,10 +1,52 @@
+{
+  "comment": "定位",
+  "type": "KMT_CLICK",
+  "key": "Key_Control",
+  "pos": {
+    "x": 0.88,
+    "y": 0.36
+  },
+  "switchMap": false
+},
+
+{
+  "comment": "切换射击模式1",
+  "type": "KMT_CLICK",
+  "key": "Key_B",
+  "pos": {
+    "x": 0.45,
+    "y": 0.85
+  },
+  "switchMap": false
+},
+{
+  "comment": "切换射击模式2",
+  "type": "KMT_CLICK",
+  "key": "Key_N",
+  "pos": {
+    "x": 0.55,
+    "y": 0.85
+  },
+  "switchMap": false
+},
+
     {
-      "comment": "定位",
+      "comment": "救人",
       "type": "KMT_CLICK",
-      "key": "Key_Control",
+      "key": "Key_5",
       "pos": {
-        "x": 0.88,
-        "y": 0.36
+        "x": 0.50,
+        "y": 0.77
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "功能键",
+      "type": "KMT_CLICK",
+      "key": "Key_6",
+      "pos": {
+        "x": 0.72,
+        "y": 0.64
       },
       "switchMap": false
     },
