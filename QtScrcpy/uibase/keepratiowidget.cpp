@@ -1,7 +1,7 @@
+#include "keepratiowidget.h"
+#include <QDebug>
 #include <QResizeEvent>
 #include <cmath>
-
-#include "keepratiowidget.h"
 
 KeepRatioWidget::KeepRatioWidget(QWidget *parent) : QWidget(parent) {}
 
@@ -54,6 +54,7 @@ void KeepRatioWidget::adjustSubWidget()
         width = curSize.width();
         height = curSize.width() / m_widthHeightRatio;
         pos.setY((curSize.height() - height) / 2);
+        //        qDebug() << "base" << "width:" << width << "height:" << height << "pos:" << pos;
     } else if (m_widthHeightRatio > 0.0f) {
         // base height
         height = curSize.height();

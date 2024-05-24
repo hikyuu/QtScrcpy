@@ -29,7 +29,10 @@
     {
       "comment": "方向盘",
       "type": "KMT_STEER_WHEEL",
-      "centerPos": {"x": 0.17, "y": 0.74},
+      "centerPos": {
+        "x": 0.17,
+        "y": 0.74
+      },
       "leftOffset": 0.1,
       "rightOffset": 0.1,
       "upOffset": 0.2,
@@ -58,6 +61,24 @@
         "y": 0.41
       },
       "switchMap": false
+    },
+    {
+      "comment": "开镜/返回",
+      "type": "KMT_DUAL_MODE",
+      "key": "RightButton",
+      "accurate": {
+        "comment": "开镜",
+        "type": "KMT_CLICK",
+        "pos": {
+          "x": 0.9,
+          "y": 0.58
+        }
+      },
+      "mouse": {
+        "comment": "返回",
+        "type": "KMT_ANDROID_KEY",
+        "androidKey": 4
+      }
     },
     {
       "comment": "跳",
@@ -103,9 +124,12 @@
     },
     {
       "comment": "强制关闭背包",
-      "type": "KMT_ANDROID_KEY",
+      "type": "KMT_CLICK",
       "key": "Key_Escape",
-      "androidKey": 4,
+      "pos": {
+        "x": 0.93,
+        "y": 0.05
+      },
       "switchMap": true,
       "forceSwitchOff": true
     },
@@ -160,16 +184,39 @@
       "switchMap": false
     },
     {
-      "comment": "换弹",
-      "type": "KMT_CLICK",
+      "comment": "换弹/整理",
+      "type": "KMT_DUAL_MODE",
       "key": "Key_R",
-      "pos": {
-        "x": 0.76,
-        "y": 0.81
+      "accurate": {
+        "comment": "换弹",
+        "type": "KMT_CLICK",
+        "pos": {
+          "x": 0.76,
+          "y": 0.81
+        },
+        "switchMap": false
       },
-      "switchMap": false
+      "mouse": {
+        "comment": "整理",
+        "type": "KMT_CLICK_MULTI",
+        "clickNodes": [
+          {
+            "delay": 0,
+            "pos": {
+              "x": 0.95,
+              "y": 0.12
+            }
+          },
+          {
+            "delay": 100,
+            "pos": {
+              "x": 0.95,
+              "y": 0.93
+            }
+          }
+        ]
+      }
     },
-
     {
       "comment": "开锁",
       "type": "KMT_CLICK",
@@ -191,44 +238,108 @@
       "switchMap": false
     },
     {
-      "comment": "手枪",
-      "type": "KMT_CLICK",
-      "key": "Key_3",
-      "pos": {
-        "x": 0.35,
-        "y": 0.9
-      },
-      "switchMap": false
-    },
-    {
-      "comment": "换枪1",
-      "type": "KMT_CLICK",
+      "comment": "换枪1/拾取4",
+      "type": "KMT_DUAL_MODE",
       "key": "Key_1",
-      "pos": {
-        "x": 0.47,
-        "y": 0.9
+      "accurate": {
+        "comment": "换枪1",
+        "type": "KMT_CLICK",
+        "pos": {
+          "x": 0.47,
+          "y": 0.9
+        }
       },
-      "switchMap": false
+      "mouse": {
+        "comment": "拾取4",
+        "type": "KMT_CLICK_MULTI",
+        "clickNodes": [
+          {
+            "delay": 0,
+            "pos": {
+              "x": 0.29,
+              "y": 0.93
+            }
+          }
+        ]
+      }
     },
     {
-      "comment": "换枪2",
-      "type": "KMT_CLICK",
+      "comment": "换枪2/拾取3",
+      "type": "KMT_DUAL_MODE",
       "key": "Key_2",
-      "pos": {
-        "x": 0.6,
-        "y": 0.9
+      "accurate": {
+        "comment": "换枪2",
+        "type": "KMT_CLICK",
+        "pos": {
+          "x": 0.6,
+          "y": 0.9
+        }
       },
-      "switchMap": false
+      "mouse": {
+        "comment": "拾取3",
+        "type": "KMT_CLICK_MULTI",
+        "clickNodes": [
+          {
+            "delay": 0,
+            "pos": {
+              "x": 0.43,
+              "y": 0.93
+            }
+          }
+        ]
+      }
     },
     {
-      "comment": "用药",
-      "type": "KMT_CLICK",
-      "key": "Key_4",
-      "pos": {
-        "x": 0.3,
-        "y": 0.9
+      "comment": "手枪/拾取2",
+      "type": "KMT_DUAL_MODE",
+      "key": "Key_3",
+      "accurate": {
+        "comment": "手枪",
+        "type": "KMT_CLICK",
+        "pos": {
+          "x": 0.35,
+          "y": 0.9
+        }
       },
-      "switchMap": false
+      "mouse": {
+        "comment": "拾取2",
+        "type": "KMT_CLICK_MULTI",
+        "clickNodes": [
+          {
+            "delay": 0,
+            "pos": {
+              "x": 0.57,
+              "y": 0.93
+            }
+          }
+        ]
+      }
+    },
+    {
+      "comment": "用药/拾取1",
+      "type": "KMT_DUAL_MODE",
+      "key": "Key_4",
+      "accurate": {
+        "comment": "用药",
+        "type": "KMT_CLICK",
+        "pos": {
+          "x": 0.3,
+          "y": 0.9
+        }
+      },
+      "mouse": {
+        "comment": "拾取1",
+        "type": "KMT_CLICK_MULTI",
+        "clickNodes": [
+          {
+            "delay": 0,
+            "pos": {
+              "x": 0.71,
+              "y": 0.93
+            }
+          }
+        ]
+      }
     },
     {
       "comment": "手雷",
@@ -239,6 +350,22 @@
         "y": 0.9
       },
       "switchMap": false
+    },
+    {
+      "comment": "手雷",
+      "type": "KMT_CLICK",
+      "key": "Key_6",
+      "pos": {
+        "x": 0.7,
+        "y": 0.85
+      },
+      "switchMap": true,
+      "forceSwitchOn": true,
+      "focusOn": true,
+      "focusPos": {
+        "x": 0.7,
+        "y": 0.85
+      }
     },
     {
       "comment": "鼠标",
@@ -255,8 +382,18 @@
       "type": "KMT_CLICK",
       "key": "Key_T",
       "pos": {
-        "x": 0.75,
+        "x": 0.8,
         "y": 0.9
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "检查弹药/捏雷",
+      "type": "KMT_CLICK",
+      "key": "Key_Y",
+      "pos": {
+        "x": 0.86,
+        "y": 0.53
       },
       "switchMap": false
     },
@@ -268,39 +405,51 @@
         "x": 0.86,
         "y": 0.72
       },
-      "switchMap": false
+      "switchMap": false,
+      "repeat": true,
+      "seconds": [
+        {
+          "comment": "M16",
+          "time": 100
+        },
+        {
+          "comment": "SKS",
+          "time": 50
+        }
+      ]
     },
     {
-      "comment": "开镜",
-      "type": "KMT_CLICK",
-      "key": "RightButton",
-      "pos": {
-        "x": 0.9,
-        "y": 0.58
-      },
-      "switchMap": false
-    },
-    {
-      "comment": "定位",
-      "type": "KMT_ROTARY_TABLE",
+      "comment": "上架/敌情",
+      "type": "KMT_DUAL_MODE",
       "key": "Key_X",
-      "pos": {
-        "x": 0.80,
-        "y": 0.40
+      "accurate": {
+        "comment": "有敌情",
+        "type": "KMT_CLICK_MULTI",
+        "clickNodes": [
+          {
+            "delay": 0,
+            "pos": {
+              "x": 0.97,
+              "y": 0.2
+            }
+          },
+          {
+            "delay": 100,
+            "pos": {
+              "x": 0.85,
+              "y": 0.2
+            }
+          }
+        ]
       },
-      "speedRatio": 1.0,
-      "switchMap": false
-    },
-    {
-      "comment": "定位",
-      "type": "KMT_ROTARY_TABLE",
-      "key": "Key_X",
-      "pos": {
-        "x": 0.80,
-        "y": 0.40
-      },
-      "speedRatio": 1.0,
-      "switchMap": false
+      "mouse": {
+        "comment": "上架",
+        "type": "KMT_CLICK",
+        "pos": {
+          "x": 0.91,
+          "y": 0.93
+        }
+      }
     },
     {
       "comment": "消息菜单",

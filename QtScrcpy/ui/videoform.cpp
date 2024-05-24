@@ -480,9 +480,9 @@ void VideoForm::switchFullScreen()
             updateStyleSheet(m_frameSize.height() > m_frameSize.width());
         }
         showToolForm(true);
-//#ifdef Q_OS_WIN32
-//        ::SetThreadExecutionState(ES_CONTINUOUS);
-//#endif
+        //#ifdef Q_OS_WIN32
+        //        ::SetThreadExecutionState(ES_CONTINUOUS);
+        //#endif
     } else {
         // 横屏全屏铺满全屏，不保持宽高比
         if (m_widthHeightRatio > 1.0f) {
@@ -505,9 +505,9 @@ void VideoForm::switchFullScreen()
         showFullScreen();
 
         // 全屏状态禁止电脑休眠、息屏
-//#ifdef Q_OS_WIN32
-//        ::SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED);
-//#endif
+        //#ifdef Q_OS_WIN32
+        //        ::SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED);
+        //#endif
     }
 }
 
@@ -528,9 +528,9 @@ void VideoForm::switchMaximumWindow()
             updateStyleSheet(m_frameSize.height() > m_frameSize.width());
         }
         showToolForm(true);
-
-        ClipCursor(NULL); // 解除锁定
-
+#ifdef Q_OS_WIN32
+        ClipCursor(nullptr); // 解除锁定
+#endif
     } else {
         if (m_widthHeightRatio > 1.0f) {
             ui->keepRatioWidget->setWidthHeightRatio(m_widthHeightRatio);
@@ -559,16 +559,15 @@ void VideoForm::switchMaximumWindow()
         rect.top = 0;
         rect.right = 2560;
         rect.bottom = 1440;
+#ifdef Q_OS_WIN32
         ClipCursor(&rect);
+#endif
         if (deviceRatio > m_widthHeightRatio) {
             ui->keepRatioWidget->resize(screen->size().height() * m_widthHeightRatio, screen->size().height());
         } else {
             ui->keepRatioWidget->resize(screen->size().width(), screen->size().width() * m_widthHeightRatio);
         }
         // 全屏状态禁止电脑休眠、息屏
-//#ifdef Q_OS_WIN32
-//        ::SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED);
-//#endif
     }
 }
 
@@ -763,7 +762,7 @@ void VideoForm::keyPressEvent(QKeyEvent *event)
     if (!device) {
         return;
     }
-    if (Qt::Key_F11 == event->key() && !event->isAutoRepeat() && isFullScreen()) {
+    if (Qt::Key_F11 == event->key() && !event->isAutoRepeat()) {
         switchMaximumWindow();
     }
 
@@ -791,10 +790,11 @@ void VideoForm::paintEvent(QPaintEvent *paint)
 void VideoForm::showEvent(QShowEvent *event)
 {
     Q_UNUSED(event)
+    QSize goodSize = ui->keepRatioWidget->goodSize();
+    setMinimumHeight(goodSize.height());
+    setMaximumHeight(goodSize.height());
     if (!isFullScreen()) {
-        QTimer::singleShot(500, this, [this](){
-            showToolForm();
-        });
+        QTimer::singleShot(500, this, [this]() { showToolForm(); });
     }
 }
 
@@ -808,11 +808,14 @@ void VideoForm::resizeEvent(QResizeEvent *event)
     QSize curSize = size();
     // 限制VideoForm尺寸不能小于keepRatioWidget good size
     if (m_widthHeightRatio > 1.0f) {
-        // hor
+        //        qDebug() << "goodSize:" << goodSize << "curSize:" << curSize;
         if (curSize.height() <= goodSize.height()) {
+            //            qDebug() << "zoom";
             setMinimumHeight(goodSize.height());
         } else {
+            //            qDebug() << "reduce";
             setMinimumHeight(0);
+            setMaximumHeight(goodSize.height());
         }
     } else {
         // ver
