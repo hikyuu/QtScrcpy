@@ -1,0 +1,381 @@
+{
+  "switchKey": "Key_Return",
+  "mouseMoveMap": {
+    "startPos": {
+      "x": 0.6,
+      "y": 0.2
+    },
+    "speedRatioX": 5,
+    "speedRatioY": 5,
+    "speedRatio": 5
+  },
+  "keyMapNodes": [
+    {
+      "comment": "方向盘",
+      "type": "KMT_STEER_WHEEL",
+      "centerPos": {
+        "x": 0.15,
+        "y": 0.77
+      },
+      "leftOffset": 0.1,
+      "rightOffset": 0.1,
+      "upOffset": 0.2,
+      "downOffset": 0.1,
+      "leftKey": "Key_A",
+      "rightKey": "Key_D",
+      "upKey": "Key_W",
+      "downKey": "Key_S"
+    },
+    {
+      "comment": "左探头",
+      "type": "KMT_CLICK",
+      "key": "Key_Q",
+      "pos": {
+        "x": 0.18,
+        "y": 0.3
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "右探头",
+      "type": "KMT_CLICK",
+      "key": "Key_E",
+      "pos": {
+        "x": 0.28,
+        "y": 0.3
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "跳",
+      "type": "KMT_CLICK",
+      "key": "Key_Space",
+      "pos": {
+        "x": 0.95,
+        "y": 0.75
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "地图",
+      "type": "KMT_CLICK",
+      "key": "Key_V",
+      "pos": {
+        "x": 0.96,
+        "y": 0.04
+      },
+      "switchMap": true,
+      "forceSwitchOn": true
+    },
+    {
+      "comment": "打开",
+      "type": "KMT_CLICK",
+      "key": "Key_F",
+      "pos": {
+        "x": 0.58,
+        "y": 0.68
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "开锁",
+      "type": "KMT_CLICK",
+      "key": "Key_G",
+      "pos": {
+        "x": 0.57,
+        "y": 0.74
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "背包",
+      "type": "KMT_CLICK",
+      "key": "Key_Tab",
+      "pos": {
+        "x": 0.25,
+        "y": 0.9
+      },
+      "switchMap": true,
+      "forceSwitchOn": true
+    },
+    {
+      "comment": "强制关闭背包",
+      "type": "KMT_CLICK",
+      "key": "Key_Escape",
+      "pos": {
+        "x": 0.94,
+        "y": 0.045
+      },
+      "switchMap": true,
+      "forceSwitchOff": true
+    },
+    {
+      "comment": "蹲",
+      "type": "KMT_CLICK",
+      "key": "Key_C",
+      "pos": {
+        "x": 0.83,
+        "y": 0.93
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "趴",
+      "type": "KMT_CLICK",
+      "key": "Key_Z",
+      "pos": {
+        "x": 0.91,
+        "y": 0.93
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "跑",
+      "type": "KMT_CLICK",
+      "key": "Key_Shift",
+      "pos": {
+        "x": 0.84,
+        "y": 0.47
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "静步",
+      "type": "KMT_CLICK",
+      "key": "Key_Alt",
+      "pos": {
+        "x": 0.85,
+        "y": 0.51
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "换弹",
+      "type": "KMT_CLICK",
+      "key": "Key_R",
+      "pos": {
+        "x": 0.73,
+        "y": 0.91
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "上车",
+      "type": "KMT_CLICK",
+      "key": "Key_H",
+      "pos": {
+        "x": 0.62,
+        "y": 0.68
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "手枪",
+      "type": "KMT_CLICK",
+      "key": "Key_3",
+      "pos": {
+        "x": 0.6,
+        "y": 0.84
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "换枪1",
+      "type": "KMT_CLICK",
+      "key": "Key_1",
+      "pos": {
+        "x": 0.43,
+        "y": 0.9
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "换枪2",
+      "type": "KMT_CLICK",
+      "key": "Key_2",
+      "pos": {
+        "x": 0.6,
+        "y": 0.9
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "用药",
+      "type": "KMT_CLICK",
+      "key": "Key_4",
+      "pos": {
+        "x": 0.32,
+        "y": 0.9
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "手雷",
+      "type": "KMT_CLICK",
+      "key": "Key_5",
+      "pos": {
+        "x": 0.67,
+        "y": 0.9
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "鼠标",
+      "type": "KMT_CLICK",
+      "key": "Key_QuoteLeft",
+      "pos": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "switchMap": true
+    },
+    {
+      "comment": "检查弹药/捏雷",
+      "type": "KMT_CLICK",
+      "key": "Key_T",
+      "pos": {
+        "x": 0.95,
+        "y": 0.51
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "开枪",
+      "type": "KMT_CLICK",
+      "key": "LeftButton",
+      "pos": {
+        "x": 0.85,
+        "y": 0.78
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "开镜/返回",
+      "type": "KMT_DUAL_MODE",
+      "key": "RightButton",
+      "accurate": {
+        "comment": "开镜",
+        "type": "KMT_CLICK",
+        "pos": {
+          "x": 0.9,
+          "y": 0.58
+        }
+      },
+      "mouse": {
+        "comment": "返回",
+        "type": "KMT_CLICK_MULTI",
+        "clickNodes": [
+          {
+            "delay": 0,
+            "pos": {
+              "x": 0.94,
+              "y": 0.042
+            }
+          }
+        ]
+      }
+    },
+    {
+      "comment": "定位",
+      "type": "KMT_ROTARY_TABLE",
+      "key": "Key_X",
+      "pos": {
+        "x": 0.80,
+        "y": 0.40
+      },
+      "speedRatio": 1.0,
+      "switchMap": false
+    },
+    {
+      "comment": "消息菜单",
+      "type": "KMT_ROTARY_TABLE",
+      "key": "Key_N",
+      "pos": {
+        "x": 0.84,
+        "y": 0.28
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "切换射击模式",
+      "type": "KMT_CLICK_MULTI",
+      "key": "Key_B",
+      "clickNodes": [
+        {
+          "delay": 0,
+          "pos": {
+            "x": 0.55,
+            "y": 0.84
+          }
+        }
+      ]
+    },
+    {
+      "comment": "人物",
+      "type": "KMT_CLICK",
+      "key": "Key_F1",
+      "pos": {
+        "x": 0.58,
+        "y": 0.37
+      }
+    },
+    {
+      "comment": "弹挂",
+      "type": "KMT_CLICK",
+      "key": "Key_F2",
+      "pos": {
+        "x": 0.58,
+        "y": 0.45
+      }
+    },
+    {
+      "comment": "背包",
+      "type": "KMT_CLICK",
+      "key": "Key_F3",
+      "pos": {
+        "x": 0.59,
+        "y": 0.53
+      }
+    },
+    {
+      "comment": "保险箱",
+      "type": "KMT_CLICK",
+      "key": "Key_F4",
+      "pos": {
+        "x": 0.60,
+        "y": 0.62
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "保险箱",
+      "type": "KMT_CLICK",
+      "key": "Key_F5",
+      "pos": {
+        "x": 0.025,
+        "y": 0.62
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "保险箱",
+      "type": "KMT_CLICK",
+      "key": "Key_F6",
+      "pos": {
+        "x": 0.025,
+        "y": 0.62
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "保险箱",
+      "type": "KMT_CLICK",
+      "key": "Key_F7",
+      "pos": {
+        "x": 0.025,
+        "y": 0.62
+      },
+      "switchMap": false
+    }
+  ]
+}
