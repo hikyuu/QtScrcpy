@@ -85,24 +85,29 @@
     },
     {
       "comment": "地图",
-      "type": "KMT_CLICK",
+      "type": "KMT_PRESS_RELEASE",
       "key": "Key_V",
-      "pos": {
-        "x": 0.88,
-        "y": 0.11
+      "pressPos": {
+        "x": 0.97,
+        "y": 0.13
       },
-      "switchMap": true
+      "releasePos": {
+        "x": 0.97,
+        "y": 0.13
+      }
     },
     {
       "comment": "背包",
-      "type": "KMT_CLICK",
+      "type": "KMT_PRESS_RELEASE",
       "key": "Key_Tab",
-      "pos": {
-        "x": 0.06,
-        "y": 0.9
+      "pressPos": {
+        "x": 0.5,
+        "y": 0.83
       },
-      "switchMap": true,
-      "forceSwitchOn": true
+      "releasePos": {
+        "x": 0.67,
+        "y": 0.83
+      }
     },
     {
       "comment": "趴",
@@ -283,27 +288,6 @@
         "x": 0.88,
         "y": 0.62
       },
-      "switchMap": false
-    },
-    {
-      "comment": "肩射",
-      "type": "KMT_CLICK",
-      "key": "BackButton",
-      "pos": {
-        "x": 0.95,
-        "y": 0.35
-      },
-      "switchMap": false
-    },
-    {
-      "comment": "定位",
-      "type": "KMT_ROTARY_TABLE",
-      "key": "Key_e",
-      "pos": {
-        "x": 0.88,
-        "y": 0.3
-      },
-      "speedRatio": 1.0,
       "switchMap": false
     },
     {
