@@ -1,25 +1,15 @@
 {
   "switchKey": "Key_Return",
-  "mouseMoveMap": {
-    "startPos": {
-      "x": 0.6,
-      "y": 0.4
-    },
-    "speedRatioX": 5,
-    "speedRatioY": 5,
-    "speedRatio": 5,
-    "smallEyes": {
-      "comment": "小眼睛",
-      "type": "KMT_CLICK",
-      "key": "Key_Alt",
-      "pos": {
-        "x": 0.71,
-        "y": 0.47
-      },
-      "switchMap": false
-    }
-  },
   "keyMapNodes": [
+    {
+      "comment": "右键轮盘",
+      "type": "KMT_MOBA_WHEEL",
+      "centerPos": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "key": "Key_QuoteLeft"
+    },
     {
       "comment": "方向盘",
       "type": "KMT_STEER_WHEEL",
