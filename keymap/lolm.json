@@ -7,14 +7,14 @@
       "key": "RightButton",
       "speedRatio": 3,
       "centerPos": {
-        "x": 0.5,
-        "y": 0.58
+        "x": 0.20,
+        "y": 0.75
       },
       "wheelPos": {
-        "x": 0.20,
-        "y": 0.8
+        "x": 0.5,
+        "y": 0.55
       },
-      "skillOffset": 0.75
+      "skillOffset": 1
     },
     {
       "comment": "技能1",
@@ -22,7 +22,7 @@
       "key": "Key_Q",
       "pos": {
         "x": 0.7,
-        "y": 0.89
+        "y": 0.88
       },
       "speedRatio": 3
     },
@@ -31,8 +31,8 @@
       "type": "KMT_MOBA_SKILL",
       "key": "Key_W",
       "pos": {
-        "x": 0.76,
-        "y": 0.74
+        "x": 0.73,
+        "y": 0.76
       },
       "speedRatio": 3
     },
@@ -41,36 +41,20 @@
       "type": "KMT_MOBA_SKILL",
       "key": "Key_E",
       "pos": {
-        "x": 0.86,
+        "x": 0.78,
         "y": 0.65
       },
       "speedRatio": 3
     },
     {
-      "comment": "回城",
+      "comment": "技能4",
       "type": "KMT_MOBA_SKILL",
-      "key": "Key_B",
+      "key": "Key_R",
       "pos": {
-        "x": 0.47,
-        "y": 0.91
+        "x": 0.86,
+        "y": 0.6
       },
-      "stopMove": true,
-      "quickCast": true,
       "speedRatio": 3
-    },
-    {
-      "comment": "回血",
-      "type": "KMT_CLICK_MULTI",
-      "key": "Key_D",
-      "clickNodes": [
-        {
-          "delay": 0,
-          "pos": {
-            "x": 0.54,
-            "y": 0.91
-          }
-        }
-      ]
     },
     {
       "comment": "快速施法1",
@@ -115,6 +99,47 @@
       ]
     },
     {
+      "comment": "回城",
+      "type": "KMT_MOBA_SKILL",
+      "key": "Key_B",
+      "pos": {
+        "x": 0.25,
+        "y": 0.89
+      },
+      "stopMove": true,
+      "quickCast": true,
+      "speedRatio": 3
+    },
+    {
+      "comment": "回血",
+      "type": "KMT_CLICK_MULTI",
+      "key": "Key_D",
+      "clickNodes": [
+        {
+          "delay": 0,
+          "pos": {
+            "x": 0.52,
+            "y": 0.89
+          }
+        }
+      ]
+    },
+    {
+      "comment": "召唤师技能",
+      "type": "KMT_CLICK_MULTI",
+      "key": "Key_F",
+      "clickNodes": [
+        {
+          "delay": 0,
+          "pos": {
+            "x": 0.6,
+            "y": 0.89
+          }
+        }
+      ]
+    },
+
+    {
       "comment": "主动装备",
       "type": "KMT_CLICK_MULTI",
       "key": "Key_V",
@@ -130,40 +155,12 @@
     },
 
     {
-      "comment": "回血",
-      "type": "KMT_CLICK_MULTI",
-      "key": "Key_D",
-      "clickNodes": [
-        {
-          "delay": 0,
-          "pos": {
-            "x": 0.54,
-            "y": 0.91
-          }
-        }
-      ]
-    },
-    {
-      "comment": "召唤师技能",
-      "type": "KMT_CLICK_MULTI",
-      "key": "Key_F",
-      "clickNodes": [
-        {
-          "delay": 0,
-          "pos": {
-            "x": 0.62,
-            "y": 0.91
-          }
-        }
-      ]
-    },
-    {
       "comment": "普攻",
       "type": "KMT_BURST_CLICK",
       "key": "Key_Space",
       "pos": {
-        "x": 0.87,
-        "y": 0.87
+        "x": 0.85,
+        "y": 0.83
       },
       "rate": 50
     },
@@ -173,7 +170,7 @@
       "key": "Key_A",
       "pos": {
         "x": 0.91,
-        "y": 0.75
+        "y": 0.7
       },
       "rate": 50
     },
