@@ -75,7 +75,7 @@
     {
       "comment": "快速施法1",
       "type": "KMT_CLICK_MULTI",
-      "key": "Key_1",
+      "key": "Key_Z",
       "clickNodes": [
         {
           "delay": 0,
@@ -89,7 +89,7 @@
     {
       "comment": "快速施法2",
       "type": "KMT_CLICK_MULTI",
-      "key": "Key_2",
+      "key": "Key_X",
       "clickNodes": [
         {
           "delay": 0,
@@ -103,7 +103,7 @@
     {
       "comment": "快速施法3",
       "type": "KMT_CLICK_MULTI",
-      "key": "Key_3",
+      "key": "Key_C",
       "clickNodes": [
         {
           "delay": 0,
@@ -222,7 +222,7 @@
     {
       "comment": "技能加点1",
       "type": "KMT_CLICK",
-      "key": "Key_Z",
+      "key": "Key_1",
       "pos": {
         "x": 0.65,
         "y": 0.8
@@ -232,7 +232,7 @@
     {
       "comment": "技能加点2",
       "type": "KMT_CLICK",
-      "key": "Key_X",
+      "key": "Key_2",
       "pos": {
         "x": 0.7,
         "y": 0.65
@@ -242,7 +242,7 @@
     {
       "comment": "技能加点3",
       "type": "KMT_CLICK",
-      "key": "Key_C",
+      "key": "Key_3",
       "pos": {
         "x": 0.82,
         "y": 0.56
