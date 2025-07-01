@@ -1,5 +1,6 @@
 {
   "switchKey": "Key_Return",
+  "customMouseClick": true,
   "mouseMoveMap": {
     "startPos": {
       "x": 0.65,
@@ -7,50 +8,29 @@
     },
     "speedRatioX": 5,
     "speedRatioY": 5,
-    "speedRatio": 5,
-    "smallEyes": {
-      "comment": "小眼睛",
-      "type": "KMT_CLICK",
-      "key": "Key_Alt",
-      "pos": {
-        "x": 0.71,
-        "y": 0.47
-      },
-      "switchMap": false
-    }
+    "speedRatio": 5
   },
   "keyMapNodes": [
     {
       "comment": "方向盘",
       "type": "KMT_STEER_WHEEL",
       "centerPos": {
-        "x": 0.2,
-        "y": 0.75
+        "x": 0.16,
+        "y": 0.78
       },
-      "leftOffset": 0.17,
-      "rightOffset": 0.17,
-      "upOffset": 0.27,
-      "downOffset": 0.2,
+      "leftOffset": 0.10,
+      "rightOffset": 0.10,
+      "upOffset": 0.13,
+      "downOffset": 0.12,
       "leftKey": "Key_A",
       "rightKey": "Key_D",
       "upKey": "Key_W",
       "downKey": "Key_S",
-      "switchKey": "Key_J",
-      "leftClickPos": {
-        "x": 0.65,
-        "y": 0.68
-      },
-      "rightClickPos": {
-        "x": 0.82,
-        "y": 0.68
-      },
-      "upClickPos": {
-        "x": 0.16,
-        "y": 0.52
-      },
-      "downClickPos": {
-        "x": 0.16,
-        "y": 0.77
+      "boost": {
+        "comment": "疾跑",
+        "type": "KMT_CLICK",
+        "key": "Key_Shift",
+        "extendOffset": 0.2
       }
     },
     {
@@ -64,22 +44,22 @@
       "switchMap": true
     },
     {
-      "comment": "大招",
+      "comment": "左",
       "type": "KMT_CLICK",
       "key": "Key_Q",
       "pos": {
-        "x": 0.93,
-        "y": 0.47
+        "x": 0.12,
+        "y": 0.5
       },
       "switchMap": false
     },
     {
-      "comment": "核弹",
+      "comment": "右",
       "type": "KMT_CLICK",
       "key": "Key_E",
       "pos": {
-        "x": 0.5,
-        "y": 0.74
+        "x": 0.2,
+        "y": 0.5
       },
       "switchMap": false
     },
@@ -88,7 +68,7 @@
       "type": "KMT_CLICK",
       "key": "Key_Space",
       "pos": {
-        "x": 0.96,
+        "x": 0.95,
         "y": 0.75
       },
       "switchMap": false
@@ -96,14 +76,14 @@
     {
       "comment": "地图",
       "type": "KMT_PRESS_RELEASE",
-      "key": "Key_V",
+      "key": "Key_Caps",
       "pressPos": {
-        "x": 0.97,
-        "y": 0.13
+        "x": 0.1,
+        "y": 0.16
       },
       "releasePos": {
-        "x": 0.97,
-        "y": 0.13
+        "x": 0.95,
+        "y": 0.05
       }
     },
     {
@@ -111,12 +91,12 @@
       "type": "KMT_PRESS_RELEASE",
       "key": "Key_Tab",
       "pressPos": {
-        "x": 0.5,
-        "y": 0.83
+        "x": 0.05,
+        "y": 0.9
       },
       "releasePos": {
-        "x": 0.67,
-        "y": 0.83
+        "x": 0.95,
+        "y": 0.05
       }
     },
     {
@@ -124,8 +104,8 @@
       "type": "KMT_CLICK",
       "key": "Key_Z",
       "pos": {
-        "x": 0.94,
-        "y": 0.91
+        "x": 0.93,
+        "y": 0.9
       },
       "switchMap": false
     },
@@ -134,8 +114,69 @@
       "type": "KMT_CLICK",
       "key": "Key_C",
       "pos": {
-        "x": 0.84,
+        "x": 0.83,
         "y": 0.94
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "检视",
+      "type": "KMT_CLICK",
+      "key": "Key_T",
+      "pos": {
+        "x": 0.22,
+        "y": 0.1
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "刀人/车",
+      "type": "KMT_CLICK",
+      "key": "Key_F",
+      "pos": {
+        "x": 0.75,
+        "y": 0.59
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "技能1",
+      "type": "KMT_CLICK",
+      "key": "Key_X",
+      "pos": {
+        "x": 0.95,
+        "y": 0.37
+      },
+      "switchMap": false
+    },
+
+    {
+      "comment": "技能2",
+      "type": "KMT_CLICK",
+      "key": "Key_V",
+      "pos": {
+        "x": 0.86,
+        "y": 0.37
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "技能2",
+      "type": "KMT_CLICK",
+      "key": "Key_G",
+      "pos": {
+        "x": 0.68,
+        "y": 0.9
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "治疗",
+      "type": "KMT_ROTARY_TABLE",
+      "key": "Key_5",
+      "pos": {
+        "x": 0.3,
+        "y": 0.9
       },
       "switchMap": false
     },
@@ -150,53 +191,12 @@
       "switchMap": false
     },
     {
-      "comment": "检视",
-      "type": "KMT_CLICK",
-      "key": "Key_T",
-      "pos": {
-        "x": 0.85,
-        "y": 0.48
-      },
-      "switchMap": false
-    },
-    {
-      "comment": "刀人/车",
-      "type": "KMT_CLICK",
-      "key": "Key_F",
-      "pos": {
-        "x": 0.68,
-        "y": 0.62
-      },
-      "switchMap": false,
-      "freshMouseMove": true
-    },
-    {
-      "comment": "升级",
-      "type": "KMT_CLICK",
-      "key": "Key_G",
-      "pos": {
-        "x": 0.68,
-        "y": 0.76
-      },
-      "switchMap": false
-    },
-    {
-      "comment": "捡东西3",
-      "type": "KMT_CLICK",
-      "key": "Key_H",
-      "pos": {
-        "x": 0.7,
-        "y": 0.54
-      },
-      "switchMap": false
-    },
-    {
       "comment": "换枪1",
       "type": "KMT_CLICK",
       "key": "Key_1",
       "pos": {
-        "x": 0.5,
-        "y": 0.8
+        "x": 0.45,
+        "y": 0.92
       },
       "switchMap": false
     },
@@ -205,8 +205,8 @@
       "type": "KMT_CLICK",
       "key": "Key_2",
       "pos": {
-        "x": 0.5,
-        "y": 0.9
+        "x": 0.55,
+        "y": 0.92
       },
       "switchMap": false
     },
@@ -215,28 +215,8 @@
       "type": "KMT_CLICK",
       "key": "Key_3",
       "pos": {
-        "x": 0.38,
+        "x": 0.61,
         "y": 0.9
-      },
-      "switchMap": false
-    },
-    {
-      "comment": "手雷",
-      "type": "KMT_ROTARY_TABLE",
-      "key": "Key_4",
-      "pos": {
-        "x": 0.67,
-        "y": 0.85
-      },
-      "switchMap": false
-    },
-    {
-      "comment": "切换手雷",
-      "type": "KMT_CLICK",
-      "key": "Key_5",
-      "pos": {
-        "x": 0.71,
-        "y": 0.93
       },
       "switchMap": false
     },
@@ -245,8 +225,8 @@
       "type": "KMT_CLICK",
       "key": "Key_6",
       "pos": {
-        "x": 0.68,
-        "y": 0.68
+        "x": 0.3,
+        "y": 0.8
       },
       "switchMap": false
     },
@@ -295,8 +275,8 @@
       "type": "KMT_CLICK",
       "key": "RightButton",
       "pos": {
-        "x": 0.88,
-        "y": 0.62
+        "x": 0.95,
+        "y": 0.6
       },
       "switchMap": false
     },
