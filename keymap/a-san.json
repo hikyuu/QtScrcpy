@@ -3,8 +3,8 @@
   "customMouseClick": true,
   "mouseMoveMap": {
     "startPos": {
-      "x": 0.65,
-      "y": 0.5
+      "x": 0.55,
+      "y": 0.65
     },
     "speedRatioX": 5,
     "speedRatioY": 5,
@@ -44,6 +44,17 @@
       "switchMap": true
     },
     {
+      "comment": "强制关闭背包",
+      "type": "KMT_CLICK",
+      "key": "Key_Escape",
+      "pos": {
+        "x": 0.95,
+        "y": 0.05
+      },
+      "switchMap": true,
+      "forceSwitchOff": true
+    },
+    {
       "comment": "左",
       "type": "KMT_CLICK",
       "key": "Key_Q",
@@ -64,6 +75,16 @@
       "switchMap": false
     },
     {
+      "comment": "静步",
+      "type": "KMT_CLICK",
+      "key": "Key_CapsLock",
+      "pos": {
+        "x": 0.96,
+        "y": 0.20
+      },
+      "switchMap": false
+    },
+    {
       "comment": "跳",
       "type": "KMT_CLICK",
       "key": "Key_Space",
@@ -76,7 +97,7 @@
     {
       "comment": "地图",
       "type": "KMT_PRESS_RELEASE",
-      "key": "Key_Caps",
+      "key": "Key_M",
       "pressPos": {
         "x": 0.1,
         "y": 0.16
@@ -86,6 +107,7 @@
         "y": 0.05
       }
     },
+
     {
       "comment": "背包",
       "type": "KMT_PRESS_RELEASE",
@@ -223,7 +245,7 @@
     {
       "comment": "功能键",
       "type": "KMT_CLICK",
-      "key": "Key_6",
+      "key": "Key_4",
       "pos": {
         "x": 0.3,
         "y": 0.8
@@ -267,6 +289,26 @@
       "pos": {
         "x": 0.85,
         "y": 0.8
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "标记",
+      "type": "KMT_CLICK",
+      "key": "MiddleButton",
+      "pos": {
+        "x": 0.8,
+        "y": 0.37
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "倍率",
+      "type": "KMT_CLICK",
+      "key": "BackButton",
+      "pos": {
+        "x": 0.3,
+        "y": 0.17
       },
       "switchMap": false
     },
