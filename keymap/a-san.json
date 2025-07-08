@@ -30,7 +30,7 @@
         "comment": "疾跑",
         "type": "KMT_CLICK",
         "key": "Key_Shift",
-        "extendOffset": 0.2
+        "extendOffset": 0.25
       }
     },
     {
