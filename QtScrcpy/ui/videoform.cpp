@@ -187,7 +187,7 @@ void VideoForm::installShortcut()
     QShortcut *shortcut = nullptr;
 
     // switchFullScreen
-    shortcut = new QShortcut(QKeySequence("Ctrl+f"), this);
+    shortcut = new QShortcut(QKeySequence("Ctrl+Alt+f"), this);
     shortcut->setAutoRepeat(false);
     connect(shortcut, &QShortcut::activated, this, [this]() {
         auto device = qsc::IDeviceManage::getInstance().getDevice(m_serial);
