@@ -21,7 +21,7 @@
       "leftOffset": 0.10,
       "rightOffset": 0.10,
       "upOffset": 0.13,
-      "downOffset": 0.12,
+      "downOffset": 0.10,
       "leftKey": "Key_A",
       "rightKey": "Key_D",
       "upKey": "Key_W",
@@ -110,16 +110,26 @@
 
     {
       "comment": "背包",
-      "type": "KMT_PRESS_RELEASE",
+      "type": "KMT_CLICK",
       "key": "Key_Tab",
-      "pressPos": {
+      "pos": {
+        "x": 0.95,
+        "y": 0.05
+      },
+      "switchMap": true,
+      "forceSwitchOff": true
+    },
+    {
+      "comment": "背包",
+      "type": "KMT_CLICK",
+      "modifier": "Key_Control",
+      "key": "Key_Tab",
+      "pos": {
         "x": 0.05,
         "y": 0.9
       },
-      "releasePos": {
-        "x": 0.95,
-        "y": 0.05
-      }
+      "switchMap": true,
+      "forceSwitchOn": true
     },
     {
       "comment": "趴",
@@ -159,7 +169,20 @@
         "x": 0.61,
         "y": 0.6
       },
-      "switchMap": false
+      "switchMap": true,
+      "forceSwitchOff": true
+    },
+    {
+      "comment": "刀人/车",
+      "type": "KMT_CLICK",
+      "key": "Key_F",
+      "modifier": "Key_Control",
+      "pos": {
+        "x": 0.61,
+        "y": 0.6
+      },
+      "switchMap": true,
+      "forceSwitchOn": true
     },
     {
       "comment": "技能1",
