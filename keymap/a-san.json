@@ -6,17 +6,17 @@
       "x": 0.6,
       "y": 0.4
     },
-    "speedRatioX": 6,
-    "speedRatioY": 6,
-    "speedRatio": 6
+    "speedRatioX": 2,
+    "speedRatioY": 2,
+    "speedRatio": 2
   },
   "keyMapNodes": [
     {
       "comment": "方向盘",
       "type": "KMT_STEER_WHEEL",
       "centerPos": {
-        "x": 0.16,
-        "y": 0.78
+        "x": 0.2,
+        "y": 0.75
       },
       "leftOffset": 0.10,
       "rightOffset": 0.10,
@@ -117,7 +117,8 @@
         "y": 0.05
       },
       "switchMap": true,
-      "forceSwitchOff": true
+      "forceSwitchOff": true,
+      "freshMouseMove": true
     },
     {
       "comment": "背包",
@@ -166,11 +167,22 @@
       "type": "KMT_CLICK",
       "key": "Key_F",
       "pos": {
-        "x": 0.61,
+        "x": 0.6,
         "y": 0.6
       },
       "switchMap": true,
       "forceSwitchOff": true
+    },
+    {
+      "comment": "刀人/车",
+      "type": "KMT_CLICK",
+      "key": "Key_F",
+      "modifier": "Key_Shift",
+      "pos": {
+        "x": 0.55,
+        "y": 0.6
+      },
+      "switchMap": false
     },
     {
       "comment": "刀人/车",
@@ -261,8 +273,8 @@
       "type": "KMT_CLICK",
       "key": "Key_3",
       "pos": {
-        "x": 0.61,
-        "y": 0.9
+        "x": 0.96,
+        "y": 0.28
       },
       "switchMap": false
     },
