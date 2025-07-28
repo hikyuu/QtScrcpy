@@ -1,5 +1,6 @@
 {
   "switchKey": "Key_Return",
+  "pointerModeKey": "Key_QuoteLeft",
   "customMouseClick": true,
   "mouseMoveMap": {
     "startPos": {
@@ -40,8 +41,8 @@
       "type": "KMT_CLICK",
       "key": "Key_QuoteLeft",
       "pos": {
-        "x": 0.5,
-        "y": 0.425
+        "x": 0.2,
+        "y": 0.75
       },
       "switchMap": true
     },
