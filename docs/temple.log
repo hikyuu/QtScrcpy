@@ -1,687 +1,1053 @@
-custom normal mouse click is false, use normal mouse event false
+update devices...
+"本软件完全开源免费，作者不对使用该软件产生的一切后果负责。你可以在以下地址下载："
 
-custom normal mouse click is false, use normal mouse event false
+"QtScrcpy 0.0.0 <https://github.com/barry-ran/QtScrcpy>"
 
-custom normal mouse click is false, use normal mouse event false
+"如果你需要更加专业的投屏控制软件，可以尝试作者开发的商业版："
 
-custom normal mouse click is false, use normal mouse event false
+"极限投屏 <https://lrbnfell4p.feishu.cn/docx/QRMhd9nImorAGgxVLlmczxSdnYf>"
 
-custom normal mouse click is false, use normal mouse event false
+AdbProcessImpl::out:List of devices attached
+192.168.31.88:5555	device
 
-custom normal mouse click is false, use normal mouse event false
+adb return  0 exit status  QProcess::NormalExit
 
-custom normal mouse click is false, use normal mouse event false
+start server...
+key: 16777217 modifier: 16777249
 
-custom normal mouse click is false, use normal mouse event false
+key: 70 modifier: 16777248
 
-custom normal mouse click is false, use normal mouse event false
+key: 70 modifier: 16777249
 
-custom normal mouse click is false, use normal mouse event false
+Script updated, current keymap mode:normal, Press ~ key to switch keymap mode
 
-custom normal mouse click is false, use normal mouse event false
+"../../../QtScrcpy/QtScrcpyCore/src/third_party/adb/win/adb.exe" "-s 192.168.31.88:5555 forward tcp:9999 localabstract:mouse-cursor"
 
-custom normal mouse click is false, use normal mouse event false
+"../../../QtScrcpy/QtScrcpyCore/src/third_party/adb/win/adb.exe" "-s 192.168.31.88:5555 push ../../../QtScrcpy/QtScrcpyCore/src/third_party/scrcpy-server /data/local/tmp/scrcpy-server.jar"
 
-custom normal mouse click is false, use normal mouse event false
+AdbProcessImpl::out:9999
 
-custom normal mouse click is false, use normal mouse event false
+adb result 2
 
-custom normal mouse click is false, use normal mouse event false
+mouse m_socket state changed: QAbstractSocket::HostLookupState
 
-custom normal mouse click is false, use normal mouse event false
+mouse m_socket state changed: QAbstractSocket::ConnectingState
 
-custom normal mouse click is false, use normal mouse event false
+mouse m_socket state changed: QAbstractSocket::ConnectedState
 
-custom normal mouse click is false, use normal mouse event false
+forward success
 
-custom normal mouse click is false, use normal mouse event false
+adb return  0 exit status  QProcess::NormalExit
 
-custom normal mouse click is false, use normal mouse event false
+AdbProcessImpl::out:../../../QtScrcpy/QtScrcpyCore/src/third_party/scrcpy-server: 1 file pushed, 0 skipped. 61.9 MB/s (69007 bytes in 0.001s)
 
-custom normal mouse click is false, use normal mouse event false
+"../../../QtScrcpy/QtScrcpyCore/src/third_party/adb/win/adb.exe" "-s 192.168.31.88:5555 reverse localabstract:scrcpy_00000e18 tcp:27183"
 
-custom normal mouse click is false, use normal mouse event false
+adb return  0 exit status  QProcess::NormalExit
 
-custom normal mouse click is false, use normal mouse event false
+adb return  0 exit status  QProcess::NormalExit
 
-custom normal mouse click is false, use normal mouse event false
+AdbProcessImpl::out:[server] INFO: Device: [vivo] vivo iPA2475 (Android 15)
 
-custom normal mouse click is false, use normal mouse event false
+readInfo wait time: 135
 
-custom normal mouse click is false, use normal mouse event false
+"../../../QtScrcpy/QtScrcpyCore/src/third_party/adb/win/adb.exe" "-s 192.168.31.88:5555 reverse --remove localabstract:scrcpy_00000e18"
 
-custom normal mouse click is false, use normal mouse event false
+server start finish in 0.459s
 
-custom normal mouse click is false, use normal mouse event false
+AdbProcessImpl::out:[server] DEBUG: Using video encoder: 'c2.mtk.avc.encoder'
+[server] DEBUG: Display: using DisplayManager API
 
-custom normal mouse click is false, use normal mouse event false
+adb return  0 exit status  QProcess::NormalExit
 
-custom normal mouse click is false, use normal mouse event false
+updateSize frameSize: QSize(3096, 2064) showSize: QSize(2040, 1360)
 
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-"pos": {"x": 0.247141, "y": 0.649254}
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-"current keymap mode: normal"
-
-mouse move stop concurrent: no touching
-
-exit game map
+show event
 
 "current keymap mode: custom"
 
-lock mouse 37 1150 1377 3161 QSize(2011, 1340)
+lock mouse 33 1322 1393 3362 QSize(2040, 1360)
 
-switchGameMap lastPos: QPointF(498,867)
+mouse move start touch id: 0
+
+mouse move first out of boundary pos: QPoint(417,742)
+
+mouse move in boundary pos: QPoint(872,676)
+
+mouse move stop touch id: 0
+
+mouse move start touch id: 1
+
+mouse move first out of boundary pos: QPoint(410,672)
+
+mouse move in boundary pos: QPoint(846,672)
+
+mouse move first out of boundary pos: QPoint(433,642)
+
+mouse move in boundary pos: QPoint(864,668)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 2
+
+mouse move first out of boundary pos: QPoint(429,627)
+
+mouse move in boundary pos: QPoint(850,662)
+
+mouse move first out of boundary pos: QPoint(417,661)
+
+mouse move in boundary pos: QPoint(859,678)
+
+mouse move first out of boundary pos: QPoint(433,670)
+
+mouse move in boundary pos: QPoint(858,671)
+
+mouse move first out of boundary pos: QPoint(417,649)
+
+mouse move next out of boundary pos: QPoint(388,648)
+
+mouse move next out of boundary pos: QPoint(359,647)
+
+mouse move in boundary pos: QPoint(800,672)
+
+mouse move stop touch id: 2
+
+mouse move start touch id: 3
+
+mouse move first out of boundary pos: QPoint(431,667)
+
+mouse move in boundary pos: QPoint(856,737)
+
+mouse move first out of boundary pos: QPoint(430,759)
+
+mouse move in boundary pos: QPoint(870,681)
+
+mouse move first out of boundary pos: QPoint(432,682)
+
+mouse move in boundary pos: QPoint(872,685)
+
+mouse move first out of boundary pos: QPoint(1608,858)
+
+mouse move in boundary pos: QPoint(1175,690)
+
+mouse move first out of boundary pos: QPoint(1631,706)
+
+mouse move in boundary pos: QPoint(1200,683)
+
+mouse move first out of boundary pos: QPoint(1620,682)
+
+mouse move next out of boundary pos: QPoint(1648,682)
+
+mouse move in boundary pos: QPoint(1178,674)
+
+mouse move first out of boundary pos: QPoint(1612,651)
+
+mouse move in boundary pos: QPoint(1174,641)
+
+mouse move first out of boundary pos: QPoint(1607,512)
+
+mouse move in boundary pos: QPoint(1071,581)
+
+"pos": {"x": 0.4, "y": 0.303676}
+
+mouse move stop touch id: 3
+
+mouse move start touch id: 1
+
+mouse move first out of boundary pos: QPoint(1612,699)
+
+mouse move in boundary pos: QPoint(1172,695)
+
+mouse move first out of boundary pos: QPoint(1612,748)
+
+mouse move in boundary pos: QPoint(1168,701)
+
+mouse move first out of boundary pos: QPoint(1606,729)
+
+mouse move in boundary pos: QPoint(1171,686)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 2
+
+mouse move first out of boundary pos: QPoint(1616,602)
+
+mouse move in boundary pos: QPoint(1166,635)
+
+mouse move first out of boundary pos: QPoint(1130,290)
+
+mouse move in boundary pos: QPoint(965,581)
+
+"pos": {"x": 0.487255, "y": 0.384559}
+
+"pos": {"x": 0.464706, "y": 0.317647}
+
+"pos": {"x": 0.463725, "y": 0.319118}
+
+"pos": {"x": 0.47402, "y": 0.322794}
+
+mouse move first out of boundary pos: QPoint(418,690)
+
+mouse move in boundary pos: QPoint(874,722)
+
+mouse move first out of boundary pos: QPoint(418,814)
+
+mouse move in boundary pos: QPoint(869,699)
+
+mouse move first out of boundary pos: QPoint(416,724)
+
+mouse move in boundary pos: QPoint(843,674)
+
+mouse move stop touch id: 2
+
+mouse move start touch id: 1
+
+mouse move first out of boundary pos: QPoint(432,600)
+
+mouse move in boundary pos: QPoint(1026,580)
+
+mouse move first out of boundary pos: QPoint(700,289)
+
+"pos": {"x": 0.480882, "y": 0.490441}
+
+mouse move in boundary pos: QPoint(1010,780)
+
+"pos": {"x": 0.492647, "y": 0.595588}
+
+mouse move first out of boundary pos: QPoint(1614,956)
+
+mouse move in boundary pos: QPoint(1181,700)
+
+mouse move first out of boundary pos: QPoint(1635,766)
+
+mouse move in boundary pos: QPoint(1170,705)
+
+mouse move first out of boundary pos: QPoint(1626,767)
+
+mouse move in boundary pos: QPoint(1184,696)
+
+mouse move first out of boundary pos: QPoint(1608,743)
+
+mouse move next out of boundary pos: QPoint(1610,743)
+
+mouse move in boundary pos: QPoint(872,674)
+
+mouse move first out of boundary pos: QPoint(423,671)
+
+mouse move in boundary pos: QPoint(858,678)
+
+mouse move first out of boundary pos: QPoint(429,676)
+
+mouse move in boundary pos: QPoint(871,676)
+
+mouse move first out of boundary pos: QPoint(422,662)
+
+mouse move in boundary pos: QPoint(844,673)
+
+mouse move first out of boundary pos: QPoint(392,648)
+
+mouse move in boundary pos: QPoint(839,671)
+
+mouse move first out of boundary pos: QPoint(398,651)
+
+mouse move in boundary pos: QPoint(870,681)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 2
+
+mouse move first out of boundary pos: QPoint(429,674)
+
+mouse move in boundary pos: QPoint(870,687)
+
+mouse move first out of boundary pos: QPoint(430,691)
+
+mouse move in boundary pos: QPoint(1168,686)
+
+mouse move first out of boundary pos: QPoint(1612,677)
+
+mouse move in boundary pos: QPoint(1170,681)
+
+mouse move first out of boundary pos: QPoint(1632,697)
+
+mouse move next out of boundary pos: QPoint(1664,697)
+
+mouse move in boundary pos: QPoint(1179,680)
+
+mouse move first out of boundary pos: QPoint(1611,664)
+
+mouse move in boundary pos: QPoint(926,581)
+
+"pos": {"x": 0.358824, "y": 0.291176}
+
+mouse move first out of boundary pos: QPoint(918,290)
+
+"pos": {"x": 0.507843, "y": 0.488235}
+
+mouse move in boundary pos: QPoint(1178,756)
+
+mouse move first out of boundary pos: QPoint(1634,889)
+
+mouse move stop touch id: 2
+
+mouse move start touch id: 1
+
+mouse move in boundary pos: QPoint(1168,710)
+
+mouse move first out of boundary pos: QPoint(1615,781)
+
+mouse move in boundary pos: QPoint(1211,703)
+
+mouse move first out of boundary pos: QPoint(1624,743)
+
+mouse move in boundary pos: QPoint(1189,694)
+
+mouse move first out of boundary pos: QPoint(1617,729)
+
+mouse move in boundary pos: QPoint(1170,682)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 2
+
+mouse move first out of boundary pos: QPoint(1471,286)
+
+mouse move in boundary pos: QPoint(1024,581)
+
+"pos": {"x": 0.552451, "y": 0.324265}
+
+mouse move first out of boundary pos: QPoint(1269,289)
+
+"pos": {"x": 0.498529, "y": 0.488971}
+
+"pos": {"x": 0.486275, "y": 0.458088}
+
+mouse move in boundary pos: QPoint(864,664)
+
+mouse move first out of boundary pos: QPoint(417,780)
+
+mouse move in boundary pos: QPoint(855,715)
+
+mouse move first out of boundary pos: QPoint(418,793)
+
+mouse move in boundary pos: QPoint(842,705)
+
+mouse move first out of boundary pos: QPoint(419,748)
+
+mouse move in boundary pos: QPoint(833,688)
+
+mouse move first out of boundary pos: QPoint(429,666)
+
+mouse move stop touch id: 2
+
+mouse move start touch id: 1
+
+mouse move in boundary pos: QPoint(868,654)
+
+mouse move first out of boundary pos: QPoint(430,526)
+
+mouse move in boundary pos: QPoint(884,580)
+
+"pos": {"x": 0.454412, "y": 0.319118}
+
+"pos": {"x": 0.566667, "y": 0.354412}
+
+"pos": {"x": 0.576961, "y": 0.372059}
+
+"pos": {"x": 0.602451, "y": 0.398529}
+
+"pos": {"x": 0.603431, "y": 0.396324}
+
+"pos": {"x": 0.609314, "y": 0.4125}
+
+mouse move first out of boundary pos: QPoint(1611,591)
+
+mouse move in boundary pos: QPoint(1172,698)
+
+mouse move first out of boundary pos: QPoint(1621,748)
+
+mouse move in boundary pos: QPoint(1183,699)
+
+mouse move first out of boundary pos: QPoint(1614,754)
+
+mouse move in boundary pos: QPoint(1169,698)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 2
+
+mouse move first out of boundary pos: QPoint(1616,702)
+
+mouse move next out of boundary pos: QPoint(1627,700)
+
+mouse move next out of boundary pos: QPoint(1639,698)
+
+mouse move next out of boundary pos: QPoint(1651,697)
+
+mouse move next out of boundary pos: QPoint(1662,695)
+
+mouse move in boundary pos: QPoint(1188,646)
+
+mouse move first out of boundary pos: QPoint(1608,596)
+
+mouse move in boundary pos: QPoint(1171,697)
+
+mouse move first out of boundary pos: QPoint(1606,698)
+
+mouse move in boundary pos: QPoint(861,687)
+
+mouse move first out of boundary pos: QPoint(420,705)
+
+mouse move in boundary pos: QPoint(848,685)
+
+mouse move first out of boundary pos: QPoint(420,689)
+
+mouse move in boundary pos: QPoint(842,678)
+
+mouse move first out of boundary pos: QPoint(423,659)
+
+mouse move in boundary pos: QPoint(855,670)
+
+mouse move first out of boundary pos: QPoint(416,639)
+
+mouse move in boundary pos: QPoint(866,665)
+
+mouse move first out of boundary pos: QPoint(1609,674)
+
+mouse move in boundary pos: QPoint(1171,694)
+
+mouse move first out of boundary pos: QPoint(1617,719)
+
+mouse move in boundary pos: QPoint(1176,685)
+
+mouse move first out of boundary pos: QPoint(1629,706)
+
+mouse move in boundary pos: QPoint(1175,695)
+
+mouse move first out of boundary pos: QPoint(1615,732)
+
+mouse move in boundary pos: QPoint(872,631)
+
+mouse move first out of boundary pos: QPoint(430,546)
+
+mouse move in boundary pos: QPoint(873,583)
+
+"pos": {"x": 0.416667, "y": 0.418382}
+
+"pos": {"x": 0.453922, "y": 0.318382}
+
+mouse move first out of boundary pos: QPoint(415,489)
+
+mouse move in boundary pos: QPoint(852,684)
+
+mouse move first out of boundary pos: QPoint(412,690)
+
+mouse move in boundary pos: QPoint(838,681)
+
+mouse move first out of boundary pos: QPoint(408,674)
+
+mouse move in boundary pos: QPoint(842,672)
+
+mouse move first out of boundary pos: QPoint(427,639)
+
+mouse move in boundary pos: QPoint(871,683)
+
+mouse move stop touch id: 2
+
+mouse move start touch id: 1
+
+"pos": {"x": 0.251471, "y": 0.509559}
+
+"pos": {"x": 0.216176, "y": 0.542647}
+
+"pos": {"x": 0.270098, "y": 0.553676}
+
+"pos": {"x": 0.302451, "y": 0.594853}
+
+"pos": {"x": 0.295588, "y": 0.588971}
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 0
+
+"pos": {"x": 0.295588, "y": 0.588971}
+
+"pos": {"x": 0.295098, "y": 0.575}
+
+mouse move first out of boundary pos: QPoint(1606,812)
+
+mouse move in boundary pos: QPoint(1179,685)
+
+mouse move first out of boundary pos: QPoint(1607,700)
+
+mouse move stop touch id: 0
+
+mouse move start touch id: 1
+
+mouse move in boundary pos: QPoint(1167,688)
+
+mouse move first out of boundary pos: QPoint(1624,726)
+
+mouse move in boundary pos: QPoint(1169,667)
+
+mouse move first out of boundary pos: QPoint(1613,696)
+
+mouse move in boundary pos: QPoint(1167,646)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 0
+
+mouse move stop touch id: 0
+
+mouse move start touch id: 1
+
+"pos": {"x": 0.437745, "y": 0.277941}
+
+mouse move first out of boundary pos: QPoint(415,451)
+
+mouse move in boundary pos: QPoint(862,689)
+
+mouse move first out of boundary pos: QPoint(416,704)
+
+mouse move in boundary pos: QPoint(869,676)
+
+mouse move first out of boundary pos: QPoint(419,662)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 0
+
+mouse move in boundary pos: QPoint(874,671)
+
+mouse move first out of boundary pos: QPoint(434,582)
+
+mouse move in boundary pos: QPoint(873,614)
+
+mouse move first out of boundary pos: QPoint(413,697)
+
+mouse move in boundary pos: QPoint(866,695)
+
+mouse move first out of boundary pos: QPoint(407,725)
+
+mouse move in boundary pos: QPoint(872,685)
+
+mouse move stop touch id: 0
+
+mouse move start touch id: 2
+
+mouse move first out of boundary pos: QPoint(425,691)
+
+mouse move in boundary pos: QPoint(874,678)
+
+"pos": {"x": 0.382353, "y": 0.452941}
+
+mouse move first out of boundary pos: QPoint(1619,750)
+
+mouse move in boundary pos: QPoint(1194,705)
+
+mouse move first out of boundary pos: QPoint(1609,762)
+
+mouse move in boundary pos: QPoint(1166,698)
+
+mouse move first out of boundary pos: QPoint(1615,732)
+
+mouse move in boundary pos: QPoint(1168,687)
+
+mouse move stop touch id: 2
+
+mouse move start touch id: 0
+
+boost key pressed, but no up key pressed
+
+mouse move first out of boundary pos: QPoint(416,727)
+
+mouse move in boundary pos: QPoint(859,681)
+
+mouse move first out of boundary pos: QPoint(409,675)
+
+mouse move in boundary pos: QPoint(855,669)
+
+mouse move stop touch id: 0
+
+mouse move start touch id: 2
+
+mouse move first out of boundary pos: QPoint(411,592)
+
+mouse move in boundary pos: QPoint(863,642)
+
+mouse move first out of boundary pos: QPoint(431,566)
+
+mouse move in boundary pos: QPoint(858,687)
+
+mouse move first out of boundary pos: QPoint(431,687)
+
+mouse move in boundary pos: QPoint(853,675)
+
+mouse move stop touch id: 2
+
+mouse move start touch id: 1
+
+mouse move first out of boundary pos: QPoint(406,644)
+
+mouse move in boundary pos: QPoint(858,658)
+
+mouse move first out of boundary pos: QPoint(1614,778)
+
+mouse move in boundary pos: QPoint(1180,684)
+
+mouse move first out of boundary pos: QPoint(1607,642)
+
+mouse move in boundary pos: QPoint(1167,634)
+
+"pos": {"x": 0.590196, "y": 0.289706}
+
+"pos": {"x": 0.584804, "y": 0.232353}
+
+mouse move first out of boundary pos: QPoint(1612,571)
+
+mouse move in boundary pos: QPoint(1171,706)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 0
+
+mouse move first out of boundary pos: QPoint(1628,769)
+
+mouse move in boundary pos: QPoint(1185,699)
+
+mouse move first out of boundary pos: QPoint(1606,772)
+
+mouse move in boundary pos: QPoint(1186,723)
+
+mouse move first out of boundary pos: QPoint(1618,765)
+
+mouse move in boundary pos: QPoint(1180,690)
+
+mouse move stop touch id: 0
+
+mouse move start touch id: 3
+
+mouse move first out of boundary pos: QPoint(1607,642)
+
+mouse move in boundary pos: QPoint(866,681)
+
+mouse move first out of boundary pos: QPoint(429,669)
+
+mouse move in boundary pos: QPoint(867,677)
+
+mouse move first out of boundary pos: QPoint(397,650)
+
+mouse move in boundary pos: QPoint(868,666)
+
+mouse move first out of boundary pos: QPoint(405,625)
+
+mouse move in boundary pos: QPoint(869,669)
+
+mouse move stop touch id: 3
+
+mouse move start touch id: 1
+
+mouse move first out of boundary pos: QPoint(416,647)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 0
+
+mouse move in boundary pos: QPoint(874,635)
+
+mouse move first out of boundary pos: QPoint(425,668)
+
+mouse move in boundary pos: QPoint(868,703)
+
+mouse move first out of boundary pos: QPoint(431,777)
+
+mouse move in boundary pos: QPoint(872,687)
+
+mouse move first out of boundary pos: QPoint(429,688)
+
+mouse move in boundary pos: QPoint(854,663)
+
+mouse move stop touch id: 0
+
+mouse move start touch id: 2
+
+mouse move first out of boundary pos: QPoint(423,632)
+
+mouse move in boundary pos: QPoint(862,669)
+
+mouse move first out of boundary pos: QPoint(1634,769)
+
+mouse move in boundary pos: QPoint(1178,684)
+
+mouse move first out of boundary pos: QPoint(1628,683)
+
+mouse move in boundary pos: QPoint(1168,680)
+
+mouse move stop touch id: 2
+
+mouse move start touch id: 0
+
+mouse move first out of boundary pos: QPoint(1609,696)
+
+mouse move in boundary pos: QPoint(1166,653)
+
+mouse move first out of boundary pos: QPoint(1062,287)
+
+"pos": {"x": 0.486275, "y": 0.449265}
+
+mouse move in boundary pos: QPoint(1010,581)
+
+"pos": {"x": 0.528431, "y": 0.286765}
+
+mouse move first out of boundary pos: QPoint(1624,521)
+
+mouse move in boundary pos: QPoint(1172,714)
+
+mouse move first out of boundary pos: QPoint(1616,792)
+
+mouse move in boundary pos: QPoint(1188,705)
+
+mouse move first out of boundary pos: QPoint(1630,781)
+
+mouse move in boundary pos: QPoint(1176,710)
+
+mouse move stop touch id: 0
+
+mouse move start touch id: 2
+
+mouse move first out of boundary pos: QPoint(1616,737)
+
+mouse move in boundary pos: QPoint(1169,647)
+
+mouse move first out of boundary pos: QPoint(1409,290)
+
+mouse move in boundary pos: QPoint(989,581)
+
+"pos": {"x": 0.464216, "y": 0.358824}
+
+"pos": {"x": 0.475, "y": 0.4625}
+
+mouse move first out of boundary pos: QPoint(423,959)
+
+mouse move in boundary pos: QPoint(866,696)
+
+mouse move first out of boundary pos: QPoint(430,693)
+
+mouse move in boundary pos: QPoint(863,687)
+
+mouse move first out of boundary pos: QPoint(425,693)
+
+mouse move in boundary pos: QPoint(853,679)
+
+mouse move first out of boundary pos: QPoint(423,666)
+
+mouse move in boundary pos: QPoint(864,670)
+
+mouse move stop touch id: 2
+
+mouse move start touch id: 1
+
+mouse move first out of boundary pos: QPoint(419,650)
+
+mouse move in boundary pos: QPoint(870,685)
+
+mouse move first out of boundary pos: QPoint(415,679)
+
+mouse move in boundary pos: QPoint(873,668)
+
+mouse move first out of boundary pos: QPoint(419,629)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 2
+
+mouse move in boundary pos: QPoint(860,663)
+
+mouse move first out of boundary pos: QPoint(1617,819)
+
+mouse move in boundary pos: QPoint(1177,686)
+
+mouse move first out of boundary pos: QPoint(1616,673)
+
+mouse move in boundary pos: QPoint(1177,670)
+
+"pos": {"x": 0.553431, "y": 0.240441}
+
+"pos": {"x": 0.545588, "y": 0.229412}
+
+mouse move stop touch id: 2
+
+mouse move start touch id: 1
+
+mouse move first out of boundary pos: QPoint(1629,487)
+
+mouse move in boundary pos: QPoint(1174,704)
+
+mouse move first out of boundary pos: QPoint(1619,755)
+
+mouse move in boundary pos: QPoint(1189,695)
+
+mouse move first out of boundary pos: QPoint(1620,736)
+
+mouse move in boundary pos: QPoint(1201,695)
+
+mouse move first out of boundary pos: QPoint(1620,724)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 3
+
+mouse move in boundary pos: QPoint(1173,689)
+
+mouse move first out of boundary pos: QPoint(1610,651)
+
+mouse move in boundary pos: QPoint(1112,582)
+
+mouse move first out of boundary pos: QPoint(1145,287)
+
+"pos": {"x": 0.506863, "y": 0.461029}
+
+"pos": {"x": 0.501471, "y": 0.503676}
+
+mouse move in boundary pos: QPoint(871,680)
+
+"pos": {"x": 0.321569, "y": 0.447059}
+
+mouse move first out of boundary pos: QPoint(430,749)
+
+mouse move in boundary pos: QPoint(872,748)
+
+mouse move first out of boundary pos: QPoint(421,882)
+
+mouse move in boundary pos: QPoint(872,705)
+
+mouse move first out of boundary pos: QPoint(420,741)
+
+mouse move in boundary pos: QPoint(852,682)
+
+mouse move first out of boundary pos: QPoint(414,645)
+
+mouse move in boundary pos: QPoint(849,678)
+
+mouse move stop touch id: 3
+
+mouse move start touch id: 1
+
+mouse move first out of boundary pos: QPoint(433,676)
+
+mouse move in boundary pos: QPoint(856,682)
+
+mouse move first out of boundary pos: QPoint(414,690)
+
+mouse move in boundary pos: QPoint(854,680)
+
+mouse move first out of boundary pos: QPoint(1611,672)
+
+mouse move in boundary pos: QPoint(934,582)
+
+"pos": {"x": 0.513725, "y": 0.328676}
+
+mouse move first out of boundary pos: QPoint(1626,649)
+
+mouse move in boundary pos: QPoint(1166,706)
+
+mouse move first out of boundary pos: QPoint(1612,778)
+
+mouse move in boundary pos: QPoint(1200,707)
+
+mouse move first out of boundary pos: QPoint(1613,773)
+
+mouse move in boundary pos: QPoint(1167,699)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 2
+
+mouse move first out of boundary pos: QPoint(1618,733)
+
+mouse move in boundary pos: QPoint(1169,679)
+
+mouse move first out of boundary pos: QPoint(1606,516)
+
+mouse move in boundary pos: QPoint(1151,582)
+
+"pos": {"x": 0.592157, "y": 0.292647}
+
+"pos": {"x": 0.514706, "y": 0.233088}
+
+"pos": {"x": 0.517157, "y": 0.269853}
+
+mouse move first out of boundary pos: QPoint(425,669)
+
+mouse move in boundary pos: QPoint(873,722)
+
+mouse move first out of boundary pos: QPoint(432,802)
+
+mouse move in boundary pos: QPoint(866,686)
+
+mouse move first out of boundary pos: QPoint(417,683)
+
+mouse move in boundary pos: QPoint(851,675)
+
+mouse move first out of boundary pos: QPoint(403,655)
+
+mouse move in boundary pos: QPoint(838,666)
+
+mouse move stop touch id: 2
+
+mouse move start touch id: 3
+
+mouse move first out of boundary pos: QPoint(426,630)
+
+mouse move next out of boundary pos: QPoint(334,622)
+
+mouse move in boundary pos: QPoint(837,662)
+
+mouse move first out of boundary pos: QPoint(408,619)
+
+mouse move in boundary pos: QPoint(845,669)
+
+mouse move first out of boundary pos: QPoint(432,671)
+
+mouse move in boundary pos: QPoint(871,683)
+
+mouse move first out of boundary pos: QPoint(432,658)
+
+mouse move stop touch id: 3
+
+mouse move start touch id: 0
+
+mouse move in boundary pos: QPoint(867,669)
+
+mouse move first out of boundary pos: QPoint(1627,662)
+
+mouse move in boundary pos: QPoint(1173,668)
+
+mouse move first out of boundary pos: QPoint(1609,643)
+
+mouse move in boundary pos: QPoint(1169,667)
+
+mouse move stop touch id: 0
+
+mouse move start touch id: 1
+
+mouse move first out of boundary pos: QPoint(1615,625)
+
+mouse move in boundary pos: QPoint(1166,607)
+
+"pos": {"x": 0.583824, "y": 0.429412}
+
+"pos": {"x": 0.585784, "y": 0.419853}
+
+mouse move first out of boundary pos: QPoint(1617,663)
+
+mouse move in boundary pos: QPoint(1185,700)
+
+mouse move first out of boundary pos: QPoint(1623,753)
+
+mouse move in boundary pos: QPoint(1197,699)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 2
+
+mouse move first out of boundary pos: QPoint(1655,752)
+
+mouse move next out of boundary pos: QPoint(1688,755)
+
+mouse move in boundary pos: QPoint(1170,695)
+
+mouse move first out of boundary pos: QPoint(1608,719)
+
+mouse move in boundary pos: QPoint(1167,678)
+
+mouse move first out of boundary pos: QPoint(1612,647)
+
+mouse move in boundary pos: QPoint(1151,580)
+
+"pos": {"x": 0.575, "y": 0.286029}
+
+mouse move first out of boundary pos: QPoint(430,610)
+
+mouse move in boundary pos: QPoint(851,690)
+
+mouse move first out of boundary pos: QPoint(429,687)
+
+mouse move in boundary pos: QPoint(873,676)
+
+mouse move first out of boundary pos: QPoint(432,663)
+
+mouse move in boundary pos: QPoint(849,675)
+
+mouse move first out of boundary pos: QPoint(433,650)
+
+mouse move in boundary pos: QPoint(842,656)
+
+mouse move first out of boundary pos: QPoint(433,624)
+
+mouse move in boundary pos: QPoint(851,683)
+
+mouse move stop touch id: 2
+
+mouse move start touch id: 1
+
+mouse move first out of boundary pos: QPoint(421,670)
+
+mouse move in boundary pos: QPoint(869,677)
+
+mouse move first out of boundary pos: QPoint(434,663)
+
+mouse move in boundary pos: QPoint(1170,750)
+
+mouse move first out of boundary pos: QPoint(1619,794)
+
+mouse move in boundary pos: QPoint(1178,689)
+
+mouse move first out of boundary pos: QPoint(1607,686)
+
+mouse move in boundary pos: QPoint(1166,646)
+
+"pos": {"x": 0.437255, "y": 0.356618}
+
+"pos": {"x": 0.493137, "y": 0.405147}
+
+"pos": {"x": 0.535784, "y": 0.411765}
+
+"pos": {"x": 0.510784, "y": 0.427206}
+
+mouse move first out of boundary pos: QPoint(1613,681)
+
+mouse move in boundary pos: QPoint(1175,695)
+
+mouse move first out of boundary pos: QPoint(1643,743)
+
+mouse move in boundary pos: QPoint(1264,708)
+
+mouse move stop touch id: 1
+
+mouse move start touch id: 2
+
+mouse move first out of boundary pos: QPoint(1636,745)
+
+mouse move next out of boundary pos: QPoint(1666,748)
+
+mouse move next out of boundary pos: QPoint(1723,752)
+
+mouse move in boundary pos: QPoint(1169,688)
+
+mouse move first out of boundary pos: QPoint(1606,668)
+
+mouse move in boundary pos: QPoint(1168,687)
+
+mouse move first out of boundary pos: QPoint(1606,626)
+
+mouse move in boundary pos: QPoint(1077,579)
+
+"pos": {"x": 0.464216, "y": 0.330147}
+
+"pos": {"x": 0.484314, "y": 0.346324}
 
 switchMouse pointerMode: true
 
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-Device clipboard copied
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-Device clipboard copied
-
-Computer clipboard unchanged
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-custom normal mouse click is false, use normal mouse event false
-
-Device clipboard copied
-
-Computer clipboard unchanged
-
-Device clipboard copied
-
-Computer clipboard unchanged
-
-Device clipboard copied
-
-Computer clipboard unchanged
-
-Device clipboard copied
-
-Computer clipboard unchanged
-
-Device clipboard copied
-
-Computer clipboard unchanged
-
-Device clipboard copied
-
-Computer clipboard unchanged
-
-Device clipboard copied
-
-Computer clipboard unchanged
-
-Device clipboard copied
-
-Computer clipboard unchanged
+mouse move stop touch id: 2
