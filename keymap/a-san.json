@@ -24,11 +24,28 @@
       "leftOffset": 0.05,
       "rightOffset": 0.05,
       "upOffset": 0.07,
-      "downOffset": 0.03,
+      "downOffset": 0.05,
       "leftKey": "Key_A",
       "rightKey": "Key_D",
       "upKey": "Key_W",
       "downKey": "Key_S",
+      "switchKey": "Key_F2",
+      "leftClickPos": {
+        "x": 0.78,
+        "y": 0.63
+      },
+      "rightClickPos": {
+        "x": 0.88,
+        "y": 0.63
+      },
+      "upClickPos": {
+        "x": 0.17,
+        "y": 0.63
+      },
+      "downClickPos": {
+        "x": 0.17,
+        "y": 0.83
+      },
       "boost": {
         "comment": "疾跑",
         "type": "KMT_CLICK",
@@ -92,8 +109,8 @@
       "type": "KMT_CLICK",
       "key": "Key_Space",
       "pos": {
-        "x": 0.95,
-        "y": 0.75
+        "x": 0.96,
+        "y": 0.74
       },
       "switchMap": false
     },
@@ -103,7 +120,7 @@
       "key": "Key_M",
       "pressPos": {
         "x": 0.1,
-        "y": 0.16
+        "y": 0.18
       },
       "releasePos": {
         "x": 0.95,
@@ -193,7 +210,7 @@
       "key": "Key_F",
       "modifier": "Key_Control",
       "pos": {
-        "x": 0.61,
+        "x": 0.6,
         "y": 0.6
       },
       "switchMap": true,
@@ -223,6 +240,16 @@
     {
       "comment": "技能2",
       "type": "KMT_CLICK",
+      "key": "ForwardButton",
+      "pos": {
+        "x": 0.86,
+        "y": 0.37
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "技能2",
+      "type": "KMT_CLICK",
       "key": "Key_G",
       "pos": {
         "x": 0.68,
@@ -238,7 +265,7 @@
         "x": 0.3,
         "y": 0.9
       },
-      "speedRatio": 6,
+      "speedRatio": 3,
       "switchMap": false
     },
     {
@@ -246,8 +273,8 @@
       "type": "KMT_CLICK",
       "key": "Key_R",
       "pos": {
-        "x": 0.77,
-        "y": 0.88
+        "x": 0.75,
+        "y": 0.85
       },
       "switchMap": false
     },
@@ -288,36 +315,6 @@
       "pos": {
         "x": 0.3,
         "y": 0.8
-      },
-      "switchMap": false
-    },
-    {
-      "comment": "战术1",
-      "type": "KMT_CLICK",
-      "key": "Key_F1",
-      "pos": {
-        "x": 0.3,
-        "y": 0.9
-      },
-      "switchMap": false
-    },
-    {
-      "comment": "战术2",
-      "type": "KMT_CLICK",
-      "key": "Key_F2",
-      "pos": {
-        "x": 0.34,
-        "y": 0.9
-      },
-      "switchMap": false
-    },
-    {
-      "comment": "战术3",
-      "type": "KMT_CLICK",
-      "key": "Key_F3",
-      "pos": {
-        "x": 0.4,
-        "y": 0.9
       },
       "switchMap": false
     },

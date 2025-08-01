@@ -34,6 +34,10 @@ VideoForm::VideoForm(bool framelessWindow, bool skin, QWidget *parent) : QWidget
     if (framelessWindow) {
         setWindowFlags(windowFlags() | Qt::FramelessWindowHint);
     }
+#if defined(Q_OS_WIN32)
+    setAttribute(Qt::WA_NativeWindow); // 确保窗口句柄有效
+    registerRawInput(reinterpret_cast<HWND>(winId())); // 注册
+#endif
 }
 
 VideoForm::~VideoForm()
@@ -76,6 +80,49 @@ void VideoForm::initUI()
     setMouseTracking(true);
     m_videoWidget->setMouseTracking(true);
     ui->keepRatioWidget->setMouseTracking(true);
+}
+
+bool VideoForm::nativeEvent(const QByteArray &eventType, void *message, long *result) {
+    auto device = qsc::IDeviceManage::getInstance().getDevice(m_serial);
+    if (!device) {
+        return false;
+    }
+    MSG* msg = static_cast<MSG*>(message);
+    if (msg->message == WM_INPUT) {
+        UINT dwSize = 0;
+        // 获取数据大小
+        GetRawInputData(reinterpret_cast<HRAWINPUT>(msg->lParam), RID_INPUT, nullptr, &dwSize, sizeof(RAWINPUTHEADER));
+        if (dwSize == 0) return false;
+
+        QByteArray buffer(dwSize, 0);
+        // 读取原始数据
+        if (GetRawInputData(reinterpret_cast<HRAWINPUT>(msg->lParam), RID_INPUT, buffer.data(), &dwSize, sizeof(RAWINPUTHEADER)) == dwSize) {
+            RAWINPUT* raw = reinterpret_cast<RAWINPUT*>(buffer.data());
+            if (raw->header.dwType == RIM_TYPEMOUSE) {
+                // 解析鼠标数据
+                int dx = raw->data.mouse.lLastX; // X 方向相对位移
+                int dy = raw->data.mouse.lLastY; // Y 方向相对位移
+                DWORD buttons = raw->data.mouse.ulButtons;
+                // 处理按钮状态（如 RI_MOUSE_LEFT_BUTTON_DOWN）
+
+                emit device->rawMouseEvent(dx, dy, buttons);
+
+            }
+        }
+        return true; // 已处理消息
+    }
+    return QWidget::nativeEvent(eventType, message, result);
+}
+
+void VideoForm::registerRawInput(HWND hwnd) {
+    RAWINPUTDEVICE rid[1];
+    rid[0].usUsagePage = 0x01; // 0x01
+    rid[0].usUsage = 0x02;    // 0x02
+    rid[0].dwFlags = RIDEV_INPUTSINK;            // 后台接收数据
+    rid[0].hwndTarget = hwnd;                    // 目标窗口句柄
+    if (!RegisterRawInputDevices(rid, 1, sizeof(rid[0]))) {
+        qDebug() << "注册失败: " << GetLastError();
+    }
 }
 
 QRect VideoForm::getGrabCursorRect()

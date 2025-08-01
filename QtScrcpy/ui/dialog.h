@@ -14,6 +14,9 @@
 #include "../QtScrcpyCore/include/QtScrcpyCore.h"
 #include "audio/audiooutput.h"
 
+#ifdef Q_OS_WIN32
+#include "../util/winutils.h"
+#endif
 namespace Ui
 {
     class Widget;
@@ -35,7 +38,6 @@ public:
 private slots:
     void onDeviceConnected(bool success, const QString& serial, const QString& deviceName, const QSize& size);
     void onDeviceDisconnected(QString serial);
-
     void on_updateDevice_clicked();
     void on_startServerBtn_clicked();
     void on_stopServerBtn_clicked();
@@ -91,6 +93,8 @@ private:
     QAction *m_quit;
     AudioOutput m_audioOutput;
     QTimer m_autoUpdatetimer;
+
+
 };
 
 #endif // DIALOG_H

@@ -35,6 +35,8 @@ public:
     void switchMaximumWindow();
 
     bool isHost();
+signals:
+    void winMouseMove(int dx, int dy, DWORD buttons);
 
 private:
     void onFrame(int width, int height, uint8_t* dataY, uint8_t* dataU, uint8_t* dataV,
@@ -86,6 +88,10 @@ private:
     bool m_skin = true;
     QPoint m_fullScreenBeforePos;
     QString m_serial;
+
+    bool nativeEvent(const QByteArray &eventType, void *message, long *result);
+
+    void registerRawInput(HWND hwnd);
 };
 
 #endif // VIDEOFORM_H

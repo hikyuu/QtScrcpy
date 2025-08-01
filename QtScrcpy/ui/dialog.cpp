@@ -12,10 +12,6 @@
 #include "videoform.h"
 #include "../groupcontroller/groupcontroller.h"
 
-#ifdef Q_OS_WIN32
-#include "../util/winutils.h"
-#endif
-
 QString s_keyMapPath = "";
 
 const QString &getKeyMapPath()
