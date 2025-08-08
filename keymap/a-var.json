@@ -4,8 +4,8 @@
   "customMouseClick": true,
   "mouseMoveMap": {
     "startPos": {
-      "x": 0.6,
-      "y": 0.4
+      "x": 0.75,
+      "y": 0.45
     },
     "speedRatioX": 3,
     "speedRatioY": 3,
@@ -21,22 +21,6 @@
       "switchMap": false
     }
   },
-  "mouseScrollMap": {
-    "comment": "鼠标滚轮映射",
-    "gameMode": {
-      "startPos": {
-        "x": 0.5,
-        "y": 0.7
-      },
-      "endPos": {
-        "x": 0.5,
-        "y": 0.3
-      }
-    },
-    "mouseMode": {
-      "scrollOffset": 0.2
-    }
-  },
   "keyMapNodes": [
     {
       "comment": "方向盘",
@@ -45,10 +29,10 @@
         "x": 0.18,
         "y": 0.80
       },
-      "leftOffset": 0.05,
-      "rightOffset": 0.05,
-      "upOffset": 0.05,
-      "downOffset": 0.025,
+      "leftOffset": 0.07,
+      "rightOffset": 0.07,
+      "upOffset": 0.07,
+      "downOffset": 0.05,
       "leftKey": "Key_A",
       "rightKey": "Key_D",
       "upKey": "Key_W",

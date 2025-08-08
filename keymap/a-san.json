@@ -5,7 +5,7 @@
   "mouseMoveMap": {
     "startPos": {
       "x": 0.6,
-      "y": 0.4
+      "y": 0.45
     },
     "speedRatioX": 2,
     "speedRatioY": 2,
@@ -58,8 +58,8 @@
       "type": "KMT_CLICK",
       "key": "Key_QuoteLeft",
       "pos": {
-        "x": 0.2,
-        "y": 0.75
+        "x": 0.95,
+        "y": 0.05
       },
       "switchMap": true
     },

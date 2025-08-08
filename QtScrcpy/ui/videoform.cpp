@@ -97,16 +97,26 @@ bool VideoForm::nativeEvent(const QByteArray &eventType, void *message, long *re
         QByteArray buffer(dwSize, 0);
         // 读取原始数据
         if (GetRawInputData(reinterpret_cast<HRAWINPUT>(msg->lParam), RID_INPUT, buffer.data(), &dwSize, sizeof(RAWINPUTHEADER)) == dwSize) {
-            RAWINPUT* raw = reinterpret_cast<RAWINPUT*>(buffer.data());
+            auto* raw = reinterpret_cast<RAWINPUT*>(buffer.data());
             if (raw->header.dwType == RIM_TYPEMOUSE) {
                 // 解析鼠标数据
                 int dx = raw->data.mouse.lLastX; // X 方向相对位移
                 int dy = raw->data.mouse.lLastY; // Y 方向相对位移
                 DWORD buttons = raw->data.mouse.ulButtons;
                 // 处理按钮状态（如 RI_MOUSE_LEFT_BUTTON_DOWN）
-
                 emit device->rawMouseEvent(dx, dy, buttons);
-
+            }
+        }
+        return true; // 已处理消息
+    }
+    if (eventType == "windows_generic_MSG") {
+        if (msg->message == WM_ACTIVATEAPP) {
+            if (msg->wParam == TRUE) {
+                qDebug() << "WM_ACTIVATEAPP activated";
+                emit device->activated(true);
+            } else {
+                qDebug() << "WM_ACTIVATEAPP deactivated";
+                emit device->activated(false);
             }
         }
         return true; // 已处理消息
@@ -812,7 +822,6 @@ void VideoForm::keyPressEvent(QKeyEvent *event)
     if (Qt::Key_F11 == event->key() && !event->isAutoRepeat()) {
         switchMaximumWindow();
     }
-
     emit device->keyEvent(event, m_videoWidget->frameSize(), m_videoWidget->size());
 }
 
