@@ -12,10 +12,10 @@
     "speedRatio": 2
   },
 
-
   "keyMapNodes": [
     {
       "comment": "方向盘",
+      "simulateWheel": true,
       "type": "KMT_STEER_WHEEL",
       "centerPos": {
         "x": 0.2,
@@ -40,11 +40,11 @@
       },
       "upClickPos": {
         "x": 0.17,
-        "y": 0.63
+        "y": 0.665
       },
       "downClickPos": {
         "x": 0.17,
-        "y": 0.83
+        "y": 0.82
       },
       "boost": {
         "comment": "疾跑",
@@ -177,7 +177,7 @@
       "type": "KMT_CLICK",
       "key": "Key_T",
       "pos": {
-        "x": 0.22,
+        "x": 0.23,
         "y": 0.33
       },
       "switchMap": false
@@ -265,17 +265,20 @@
         "x": 0.3,
         "y": 0.9
       },
+      "delay": 250,
       "speedRatio": 3,
       "switchMap": false
     },
     {
       "comment": "换弹",
-      "type": "KMT_CLICK",
+      "type": "KMT_ROTARY_TABLE",
       "key": "Key_R",
       "pos": {
         "x": 0.75,
         "y": 0.85
       },
+      "delay": 250,
+      "speedRatio": 3,
       "switchMap": false
     },
     {

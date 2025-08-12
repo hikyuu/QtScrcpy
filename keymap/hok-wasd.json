@@ -1,0 +1,287 @@
+{
+  "switchKey": "Key_Return",
+  "keyMapNodes": [
+    {
+      "comment": "方向盘",
+      "simulateWheel": false,
+      "type": "KMT_STEER_WHEEL",
+      "centerPos": {
+        "x": 0.2,
+        "y": 0.75
+      },
+      "leftOffset": 0.04,
+      "rightOffset": 0.04,
+      "upOffset": 0.07,
+      "downOffset": 0.07,
+      "leftKey": "Key_A",
+      "rightKey": "Key_D",
+      "upKey": "Key_W",
+      "downKey": "Key_S"
+    },
+
+    {
+      "comment": "技能1",
+      "type": "KMT_MOBA_SKILL",
+      "key": "Key_Shift",
+      "pos": {
+        "x": 0.7,
+        "y": 0.89
+      },
+      "speedRatio": 3
+    },
+    {
+      "comment": "技能2",
+      "type": "KMT_MOBA_SKILL",
+      "key": "Key_E",
+      "pos": {
+        "x": 0.76,
+        "y": 0.74
+      },
+      "speedRatio": 3
+    },
+    {
+      "comment": "技能3",
+      "type": "KMT_MOBA_SKILL",
+      "key": "Key_R",
+      "pos": {
+        "x": 0.86,
+        "y": 0.65
+      },
+      "speedRatio": 3
+    },
+    {
+      "comment": "回城",
+      "type": "KMT_MOBA_SKILL",
+      "key": "Key_B",
+      "pos": {
+        "x": 0.47,
+        "y": 0.91
+      },
+      "stopMove": true,
+      "quickCast": true,
+      "speedRatio": 3
+    },
+    {
+      "comment": "回血",
+      "type": "KMT_CLICK_MULTI",
+      "key": "Key_C",
+      "clickNodes": [
+        {
+          "delay": 0,
+          "pos": {
+            "x": 0.54,
+            "y": 0.91
+          }
+        }
+      ]
+    },
+    {
+      "comment": "快速施法1",
+      "type": "KMT_CLICK_MULTI",
+      "key": "Key_Z",
+      "clickNodes": [
+        {
+          "delay": 0,
+          "pos": {
+            "x": 0.7,
+            "y": 0.89
+          }
+        }
+      ]
+    },
+    {
+      "comment": "快速施法2",
+      "type": "KMT_CLICK_MULTI",
+      "key": "Key_X",
+      "clickNodes": [
+        {
+          "delay": 0,
+          "pos": {
+            "x": 0.76,
+            "y": 0.74
+          }
+        }
+      ]
+    },
+    {
+      "comment": "快速施法3",
+      "type": "KMT_CLICK_MULTI",
+      "key": "Key_C",
+      "clickNodes": [
+        {
+          "delay": 0,
+          "pos": {
+            "x": 0.86,
+            "y": 0.65
+          }
+        }
+      ]
+    },
+    {
+      "comment": "主动装备",
+      "type": "KMT_CLICK_MULTI",
+      "key": "Key_V",
+      "clickNodes": [
+        {
+          "delay": 0,
+          "pos": {
+            "x": 0.87,
+            "y": 0.48
+          }
+        }
+      ]
+    },
+    {
+      "comment": "普攻",
+      "type": "KMT_BURST_CLICK",
+      "key": "Key_Space",
+      "pos": {
+        "x": 0.87,
+        "y": 0.87
+      },
+      "rate": 50
+    },
+    {
+      "comment": "防御塔",
+      "type": "KMT_BURST_CLICK",
+      "key": "Key_X",
+      "pos": {
+        "x": 0.91,
+        "y": 0.75
+      },
+      "rate": 50
+    },
+    {
+      "comment": "地图",
+      "type": "KMT_PRESS_RELEASE",
+      "key": "Key_Alt",
+      "pressPos": {
+        "x": 0.27,
+        "y": 0.37
+      },
+      "releasePos": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "商店",
+      "type": "KMT_PRESS_RELEASE",
+      "key": "Key_Control",
+      "pressPos": {
+        "x": 0.03,
+        "y": 0.43
+      },
+      "releasePos": {
+        "x": 0.94,
+        "y": 0.15
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "对局信息",
+      "type": "KMT_PRESS_RELEASE",
+      "key": "Key_QuoteLeft",
+      "pressPos": {
+        "x": 0.74,
+        "y": 0.02
+      },
+      "releasePos": {
+        "x": 0.95,
+        "y": 0.18
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "技能加点1",
+      "type": "KMT_CLICK",
+      "key": "Key_1",
+      "pos": {
+        "x": 0.65,
+        "y": 0.8
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "技能加点2",
+      "type": "KMT_CLICK",
+      "key": "Key_2",
+      "pos": {
+        "x": 0.7,
+        "y": 0.65
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "技能加点3",
+      "type": "KMT_CLICK",
+      "key": "Key_3",
+      "pos": {
+        "x": 0.82,
+        "y": 0.56
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "装备1",
+      "type": "KMT_CLICK",
+      "key": "Key_4",
+      "pos": {
+        "x": 0.1,
+        "y": 0.4
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "装备2",
+      "type": "KMT_CLICK",
+      "key": "Key_5",
+      "pos": {
+        "x": 0.1,
+        "y": 0.5
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "战术1",
+      "type": "KMT_CLICK",
+      "key": "Key_F1",
+      "pos": {
+        "x": 0.3,
+        "y": 0.9
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "战术2",
+      "type": "KMT_CLICK",
+      "key": "Key_F2",
+      "pos": {
+        "x": 0.34,
+        "y": 0.9
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "战术3",
+      "type": "KMT_CLICK",
+      "key": "Key_F3",
+      "pos": {
+        "x": 0.4,
+        "y": 0.9
+      },
+      "switchMap": false
+    },
+    {
+      "comment": "消息菜单",
+      "type": "KMT_ROTARY_TABLE",
+      "key": "Key_N",
+      "pos": {
+        "x": 0.84,
+        "y": 0.28
+      },
+      "switchMap": false
+    }
+  ]
+}

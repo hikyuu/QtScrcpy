@@ -97,7 +97,7 @@ bool VideoForm::nativeEvent(const QByteArray &eventType, void *message, long *re
         QByteArray buffer(dwSize, 0);
         // 读取原始数据
         if (GetRawInputData(reinterpret_cast<HRAWINPUT>(msg->lParam), RID_INPUT, buffer.data(), &dwSize, sizeof(RAWINPUTHEADER)) == dwSize) {
-            auto* raw = reinterpret_cast<RAWINPUT*>(buffer.data());
+            RAWINPUT* raw = reinterpret_cast<RAWINPUT*>(buffer.data());
             if (raw->header.dwType == RIM_TYPEMOUSE) {
                 // 解析鼠标数据
                 int dx = raw->data.mouse.lLastX; // X 方向相对位移
@@ -109,15 +109,13 @@ bool VideoForm::nativeEvent(const QByteArray &eventType, void *message, long *re
         }
         return true; // 已处理消息
     }
-    if (eventType == "windows_generic_MSG") {
-        if (msg->message == WM_ACTIVATEAPP) {
-            if (msg->wParam == TRUE) {
-                qDebug() << "WM_ACTIVATEAPP activated";
-                emit device->activated(true);
-            } else {
-                qDebug() << "WM_ACTIVATEAPP deactivated";
-                emit device->activated(false);
-            }
+    if (msg->message == WM_ACTIVATEAPP) {
+        if (msg->wParam == TRUE) {
+            qDebug() << "WM_ACTIVATEAPP activated";
+            emit device->activated(true);
+        } else {
+            qDebug() << "WM_ACTIVATEAPP deactivated";
+            emit device->activated(false);
         }
         return true; // 已处理消息
     }
