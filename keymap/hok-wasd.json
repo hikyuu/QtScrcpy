@@ -4,6 +4,7 @@
     {
       "comment": "方向盘",
       "simulateWheel": false,
+      "keepMove": false,
       "type": "KMT_STEER_WHEEL",
       "centerPos": {
         "x": 0.2,
@@ -18,26 +19,33 @@
       "upKey": "Key_W",
       "downKey": "Key_S"
     },
-
+    {
+      "comment": "右键轮盘",
+      "type": "KMT_MOBA_WHEEL",
+      "key": "RightButton",
+      "skillCancelKey": "BackButton",
+      "skillCancelPos":  {"x": 0.90, "y": 0.34},
+      "speedRatio": 3,
+      "centerPos": {"x": 0.5, "y": 0.55},
+      "wheelPos": {"x": 0.20, "y": 0.8},
+      "skillOffset": 1
+    },
     {
       "comment": "技能1",
       "type": "KMT_MOBA_SKILL",
       "key": "Key_Shift",
-      "pos": {
-        "x": 0.7,
-        "y": 0.89
-      },
-      "speedRatio": 3
+      "pos": {"x": 0.74, "y": 0.86},
+      "speedRatio": 3.65
     },
     {
       "comment": "技能2",
       "type": "KMT_MOBA_SKILL",
       "key": "Key_E",
       "pos": {
-        "x": 0.76,
-        "y": 0.74
+        "x": 0.80,
+        "y": 0.73
       },
-      "speedRatio": 3
+      "speedRatio": 3.65
     },
     {
       "comment": "技能3",
@@ -47,7 +55,41 @@
         "x": 0.86,
         "y": 0.65
       },
-      "speedRatio": 3
+      "speedRatio": 3.65
+    },
+    {
+      "comment": "技能4",
+      "type": "KMT_MOBA_SKILL",
+      "key": "Key_T",
+      "pos": {
+        "x": 0.53,
+        "y": 0.74
+      },
+      "speedRatio": 3.65
+    },
+    {
+      "comment": "快速施法1",
+      "type": "KMT_CLICK",
+      "key": "Key_Z",
+      "pos": {"x": 0.74, "y": 0.86}
+    },
+    {
+      "comment": "快速施法2",
+      "key": "Key_X",
+      "type": "KMT_CLICK",
+      "pos": {
+        "x": 0.80,
+        "y": 0.73
+      }
+    },
+    {
+      "comment": "快速施法3",
+      "type": "KMT_CLICK",
+      "key": "Key_C",
+      "pos": {
+        "x": 0.86,
+        "y": 0.65
+      }
     },
     {
       "comment": "回城",
@@ -62,60 +104,28 @@
       "speedRatio": 3
     },
     {
-      "comment": "回血",
+      "comment": "召唤师技能",
       "type": "KMT_CLICK_MULTI",
-      "key": "Key_C",
+      "key": "Key_F",
       "clickNodes": [
         {
           "delay": 0,
           "pos": {
-            "x": 0.54,
+            "x": 0.62,
             "y": 0.91
           }
         }
       ]
     },
+
     {
-      "comment": "快速施法1",
-      "type": "KMT_CLICK_MULTI",
-      "key": "Key_Z",
-      "clickNodes": [
-        {
-          "delay": 0,
-          "pos": {
-            "x": 0.7,
-            "y": 0.89
-          }
-        }
-      ]
-    },
-    {
-      "comment": "快速施法2",
-      "type": "KMT_CLICK_MULTI",
-      "key": "Key_X",
-      "clickNodes": [
-        {
-          "delay": 0,
-          "pos": {
-            "x": 0.76,
-            "y": 0.74
-          }
-        }
-      ]
-    },
-    {
-      "comment": "快速施法3",
-      "type": "KMT_CLICK_MULTI",
-      "key": "Key_C",
-      "clickNodes": [
-        {
-          "delay": 0,
-          "pos": {
-            "x": 0.86,
-            "y": 0.65
-          }
-        }
-      ]
+      "comment": "回血",
+      "key": "Key_G",
+      "type": "KMT_CLICK",
+      "pos": {
+        "x": 0.57,
+        "y": 0.91
+      }
     },
     {
       "comment": "主动装备",
@@ -138,16 +148,6 @@
       "pos": {
         "x": 0.87,
         "y": 0.87
-      },
-      "rate": 50
-    },
-    {
-      "comment": "防御塔",
-      "type": "KMT_BURST_CLICK",
-      "key": "Key_X",
-      "pos": {
-        "x": 0.91,
-        "y": 0.75
       },
       "rate": 50
     },
@@ -198,7 +198,7 @@
       "type": "KMT_CLICK",
       "key": "Key_1",
       "pos": {
-        "x": 0.65,
+        "x": 0.68,
         "y": 0.8
       },
       "switchMap": false
@@ -208,7 +208,7 @@
       "type": "KMT_CLICK",
       "key": "Key_2",
       "pos": {
-        "x": 0.7,
+        "x": 0.75,
         "y": 0.65
       },
       "switchMap": false
