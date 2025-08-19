@@ -146,8 +146,7 @@
       "modifier": "Key_Control",
       "key": "Key_Tab",
       "pos": {
-        "x": 0.05,
-        "y": 0.9
+        "x": 0.0338, "y": 0.914
       },
       "switchMap": true,
       "forceSwitchOn": true
@@ -177,8 +176,8 @@
       "type": "KMT_CLICK",
       "key": "Key_T",
       "pos": {
-        "x": 0.23,
-        "y": 0.33
+        "x": 0.238,
+        "y": 0.32
       },
       "switchMap": false
     },
@@ -263,7 +262,7 @@
       "key": "Key_5",
       "pos": {
         "x": 0.3,
-        "y": 0.9
+        "y": 0.92
       },
       "delay": 250,
       "speedRatio": 3,
