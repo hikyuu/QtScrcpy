@@ -39,6 +39,7 @@ void ToolForm::initStyle()
 {
     IconHelper::Instance()->SetIcon(ui->fullScreenBtn, QChar(0xf0b2), 15);
     IconHelper::Instance()->SetIcon(ui->maxBtn, QChar(0xf2d0), 15);
+    IconHelper::Instance()->SetIcon(ui->maskBtn, QChar(0xf11c), 15);
     IconHelper::Instance()->SetIcon(ui->menuBtn, QChar(0xf096), 15);
     IconHelper::Instance()->SetIcon(ui->homeBtn, QChar(0xf1db), 15);
     //IconHelper::Instance()->SetIcon(ui->returnBtn, QChar(0xf104), 15);
@@ -117,6 +118,16 @@ void ToolForm::on_maxBtn_clicked()
     }
 
     dynamic_cast<VideoForm *>(parent())->switchMaximumWindow();
+}
+
+void ToolForm::on_maskBtn_clicked()
+{
+    qDebug()<< "on_maskBtn_clicked";
+    auto device = qsc::IDeviceManage::getInstance().getDevice(m_serial);
+    if (!device) {
+        return;
+    }
+    device->keyboard(device->getUserData());
 }
 
 void ToolForm::on_returnBtn_clicked()

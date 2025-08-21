@@ -12,7 +12,6 @@
 #include <QTimer>
 #include <QWindow>
 #include <QThread>
-#include <QtWidgets/QHBoxLayout>
 
 #include "config.h"
 #include "iconhelper.h"
@@ -114,10 +113,10 @@ bool VideoForm::nativeEvent(const QByteArray &eventType, void *message, long *re
     }
     if (msg->message == WM_ACTIVATEAPP) {
         if (msg->wParam == TRUE) {
-            qDebug() << "WM_ACTIVATEAPP activated";
+//            qDebug() << "WM_ACTIVATEAPP activated";
             emit device->activated(true);
         } else {
-            qDebug() << "WM_ACTIVATEAPP deactivated";
+//            qDebug() << "WM_ACTIVATEAPP deactivated";
             emit device->activated(false);
         }
         return true; // 已处理消息

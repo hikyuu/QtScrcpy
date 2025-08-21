@@ -41,6 +41,7 @@ int main(int argc, char *argv[])
     qputenv("QTSCRCPY_KEYMAP_PATH", "../../../keymap");
     qputenv("QTSCRCPY_CONFIG_PATH", "../../../config");
 #endif
+    SetConsoleOutputCP(CP_UTF8); // 强制控制台使用 UTF-8
 
     g_msgType = covertLogLevel(Config::getInstance().getLogLevel());
 
