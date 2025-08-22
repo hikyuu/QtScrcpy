@@ -42,6 +42,7 @@ public:
     QString getPushFilePath();
     QString getServerPath();
     QString getAdbPath();
+    const QString &getConfigPath();
     QString getLogLevel();
     QString getCodecOptions();
     QString getCodecName();
@@ -63,7 +64,6 @@ public:
 
 private:
     explicit Config(QObject *parent = nullptr);
-    const QString &getConfigPath();
 
 private:
     static QString s_configPath;

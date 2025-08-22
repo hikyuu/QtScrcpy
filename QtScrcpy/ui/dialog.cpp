@@ -11,6 +11,7 @@
 #include "ui_dialog.h"
 #include "videoform.h"
 #include "../groupcontroller/groupcontroller.h"
+#include "history.h"
 
 QString s_keyMapPath = "";
 
@@ -32,6 +33,12 @@ Dialog::Dialog(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
     initUI();
 
     updateBootConfig(true);
+
+    History::getInstance().loadHistoryAddress();
+    ui->historyAddressList->clear();
+    for (auto &item : History::getInstance().getHistories()) {
+        ui->historyAddressList->addItem(item.ip + ":" + QString::number(item.port));
+    }
 
     on_useSingleModeCheck_clicked();
     on_updateDevice_clicked();
@@ -661,6 +668,16 @@ void Dialog::on_connectedPhoneList_itemDoubleClicked(QListWidgetItem *item)
     Q_UNUSED(item);
     ui->serialBox->setCurrentIndex(ui->connectedPhoneList->currentRow());
     on_startServerBtn_clicked();
+}
+
+void Dialog::on_historyAddressList_itemDoubleClicked(QListWidgetItem *item)
+{
+    int row = ui->historyAddressList->row(item);  // 获取行下标
+    History::Address address = History::getInstance().getHistories()[row];
+    ui->deviceIpEdt->setText(address.ip);
+    ui->devicePortEdt->setText(QString::number(address.port));
+    on_wirelessConnectBtn_clicked();
+    // 连接成功后会自动更新设备列表
 }
 
 void Dialog::on_updateNameBtn_clicked()

@@ -10,6 +10,7 @@
 /server/gradlew.bat
 /server/local.properties
 /build/
+/config
 build-*
 *.DS_Store
 userdata.ini
