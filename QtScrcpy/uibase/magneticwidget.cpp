@@ -9,7 +9,7 @@ MagneticWidget::MagneticWidget(QWidget *adsorbWidget, AdsorbPositions adsorbPos)
     Q_ASSERT(m_adsorbWidget);
     setParent(m_adsorbWidget);
     setWindowFlags(windowFlags() | Qt::Tool);
-    m_adsorbWidgetSize = m_adsorbWidget->size();
+    m_adsorbWidgetSize = m_adsorbWidget->frameSize();
 
     m_adsorbWidget->installEventFilter(this);
 }
@@ -33,7 +33,7 @@ bool MagneticWidget::eventFilter(QObject *watched, QEvent *event)
     }
     // 始终记录adsorbWidget最新size
     if (QEvent::Resize == event->type()) {
-        m_adsorbWidgetSize = m_adsorbWidget->size();
+        m_adsorbWidgetSize = m_adsorbWidget->frameSize();
     }
     if (m_adsorbed && QEvent::Move == event->type()) {
         move(m_adsorbWidget->pos() - m_relativePos);
@@ -95,6 +95,7 @@ void MagneticWidget::moveEvent(QMoveEvent *event)
 
     QRect parentRect;
     QRect targetRect;
+
     getGeometry(parentRect, targetRect);
 
     int parentLeft = parentRect.left();
