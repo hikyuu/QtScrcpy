@@ -7,36 +7,19 @@
 // 存储顶点坐标和纹理坐标
 // 存在一起缓存在vbo
 // 使用glVertexAttribPointer指定访问方式即可
+// 顶点坐标 + 纹理坐标 (优化内存布局)
 static const GLfloat coordinate[] = {
-    // 顶点坐标，存储4个xyz坐标
-    // 坐标范围为[-1,1],中心点为 0,0
-    // 二维图像z始终为0
-    // GL_TRIANGLE_STRIP的绘制方式：
-    // 使用前3个坐标绘制一个三角形，使用后三个坐标绘制一个三角形，正好为一个矩形
-    // x     y     z
-    -1.0f,
-    -1.0f,
-    0.0f,
-    1.0f,
-    -1.0f,
-    0.0f,
-    -1.0f,
-    1.0f,
-    0.0f,
-    1.0f,
-    1.0f,
-    0.0f,
+        // 顶点坐标 (x, y, z)
+        -1.0f, -1.0f, 0.0f,
+        1.0f, -1.0f, 0.0f,
+        -1.0f,  1.0f, 0.0f,
+        1.0f,  1.0f, 0.0f,
 
-    // 纹理坐标，存储4个xy坐标
-    // 坐标范围为[0,1],左下角为 0,0
-    0.0f,
-    1.0f,
-    1.0f,
-    1.0f,
-    0.0f,
-    0.0f,
-    1.0f,
-    0.0f
+        // 纹理坐标 (u, v)
+        0.0f, 1.0f,
+        1.0f, 1.0f,
+        0.0f, 0.0f,
+        1.0f, 0.0f
 };
 
 // 顶点着色器
@@ -51,36 +34,24 @@ static const QString s_vertShader = R"(
     }
 )";
 
-// 片段着色器
+// 修复后的片段着色器（标准BT.709矩阵）
 static QString s_fragShader = R"(
-    varying vec2 textureOut;        // 由顶点着色器传递过来的纹理坐标
-    uniform sampler2D textureY;     // uniform 纹理单元，利用纹理单元可以使用多个纹理
-    uniform sampler2D textureU;     // sampler2D是2D采样器
-    uniform sampler2D textureV;     // 声明yuv三个纹理单元
-    void main(void)
-    {
-        vec3 yuv;
-        vec3 rgb;
+    varying vec2 textureOut;
+    uniform sampler2D textureY;
+    uniform sampler2D textureU;
+    uniform sampler2D textureV;
 
-        // SDL2 BT709_SHADER_CONSTANTS
-        // https://github.com/spurious/SDL-mirror/blob/4ddd4c445aa059bb127e101b74a8c5b59257fbe2/src/render/opengl/SDL_shaders_gl.c#L102
-        const vec3 Rcoeff = vec3(1.1644,  0.000,  1.7927);
-        const vec3 Gcoeff = vec3(1.1644, -0.2132, -0.5329);
-        const vec3 Bcoeff = vec3(1.1644,  2.1124,  0.000);
+    void main() {
+        float y = texture2D(textureY, textureOut).r;
+        float u = texture2D(textureU, textureOut).r - 0.5;
+        float v = texture2D(textureV, textureOut).r - 0.5;
 
-        // 根据指定的纹理textureY和坐标textureOut来采样
-        yuv.x = texture2D(textureY, textureOut).r;
-        yuv.y = texture2D(textureU, textureOut).r - 0.5;
-        yuv.z = texture2D(textureV, textureOut).r - 0.5;
+        // BT.709 标准转换矩阵
+        float r = y + 1.5748 * v;
+        float g = y - 0.1873 * u - 0.4681 * v;
+        float b = y + 1.8556 * u;
 
-        // 采样完转为rgb
-        // 减少一些亮度
-        yuv.x = yuv.x - 0.0625;
-        rgb.r = dot(yuv, Rcoeff);
-        rgb.g = dot(yuv, Gcoeff);
-        rgb.b = dot(yuv, Bcoeff);
-        // 输出颜色值
-        gl_FragColor = vec4(rgb, 1.0);
+        gl_FragColor = vec4(r, g, b, 1.0);
     }
 )";
 
@@ -143,6 +114,8 @@ void QYUVOpenGLWidget::initializeGL()
 {
     initializeOpenGLFunctions();
     glDisable(GL_DEPTH_TEST);
+    // 设置内存对齐（解决宽度非4倍数时的撕裂问题）
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // [1](@ref)
 
     // 顶点缓冲对象初始化
     m_vbo.create();

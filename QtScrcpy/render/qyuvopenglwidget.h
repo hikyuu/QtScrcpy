@@ -4,6 +4,7 @@
 #include <QOpenGLFunctions>
 #include <QOpenGLShaderProgram>
 #include <QOpenGLWidget>
+#include <QElapsedTimer>
 
 class QYUVOpenGLWidget
     : public QOpenGLWidget

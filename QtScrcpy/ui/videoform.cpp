@@ -35,10 +35,10 @@ VideoForm::VideoForm(bool framelessWindow, bool skin, QWidget *parent) : QWidget
         setWindowFlags(windowFlags() | Qt::FramelessWindowHint);
     }
 #if defined(Q_OS_WIN32)
-    setAttribute(Qt::WA_NativeWindow); // 确保窗口句柄有效
-    registerRawInput(reinterpret_cast<HWND>(winId())); // 注册
     QThread* guiThread = QThread::currentThread();
     guiThread->setPriority(QThread::TimeCriticalPriority);
+    setAttribute(Qt::WA_NativeWindow); // 确保窗口句柄有效
+    registerRawInput(reinterpret_cast<HWND>(winId())); // 注册
 #endif
 }
 
