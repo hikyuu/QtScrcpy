@@ -72,6 +72,7 @@ QYUVOpenGLWidget::~QYUVOpenGLWidget()
     makeCurrent();
     m_vbo.destroy();
     deInitTextures();
+    deInitPBOs();  // 添加PBO清理
     doneCurrent();
 }
 
@@ -114,18 +115,49 @@ void QYUVOpenGLWidget::initializeGL()
 {
     initializeOpenGLFunctions();
     glDisable(GL_DEPTH_TEST);
-    // 设置内存对齐（解决宽度非4倍数时的撕裂问题）
-    glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // [1](@ref)
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
     // 顶点缓冲对象初始化
     m_vbo.create();
     m_vbo.bind();
     m_vbo.allocate(coordinate, sizeof(coordinate));
     initShader();
-    // 设置背景清理色为黑色
+
+    // 初始化PBO
+    initPBOs();
+
     glClearColor(0.0, 0.0, 0.0, 0.0);
-    // 清理颜色背景
     glClear(GL_COLOR_BUFFER_BIT);
+}
+
+void QYUVOpenGLWidget::initPBOs()
+{
+    // 为Y、U、V三个分量分别创建两个PBO（双缓冲）
+    glGenBuffers(3 * 2, &m_pbo[0][0]);
+
+    for (int i = 0; i < 3; ++i) {
+        QSize size = (i == 0) ? m_frameSize : m_frameSize / 2;
+        int bufferSize = size.width() * size.height() * (i == 0 ? 1 : 1); // YUV都是单通道
+
+        for (int j = 0; j < 2; j++) {
+            glBindBuffer(GL_PIXEL_UNPACK_BUFFER, m_pbo[i][j]);
+            glBufferData(GL_PIXEL_UNPACK_BUFFER, bufferSize, nullptr, GL_STREAM_DRAW);
+        }
+
+        m_pboIndex[i] = 0;
+    }
+
+    glBindBuffer(GL_PIXEL_UNPACK_BUFFER, 0);
+}
+
+void QYUVOpenGLWidget::deInitPBOs()
+{
+    if (QOpenGLFunctions_3_3_Core::isInitialized()) {
+        glDeleteBuffers(3 * 2, &m_pbo[0][0]);
+    }
+
+    memset(m_pbo, 0, sizeof(m_pbo));
+    memset(m_pboIndex, 0, sizeof(m_pboIndex));
 }
 
 void QYUVOpenGLWidget::paintGL()
@@ -223,7 +255,7 @@ void QYUVOpenGLWidget::initTextures()
 
 void QYUVOpenGLWidget::deInitTextures()
 {
-    if (QOpenGLFunctions::isInitialized(QOpenGLFunctions::d_ptr)) {
+    if (QOpenGLFunctions_3_3_Core::isInitialized()) {
         glDeleteTextures(3, m_texture);
     }
 
@@ -233,14 +265,51 @@ void QYUVOpenGLWidget::deInitTextures()
 
 void QYUVOpenGLWidget::updateTexture(GLuint texture, quint32 textureType, quint8 *pixels, quint32 stride)
 {
-    if (!pixels)
+    if (!pixels || !m_textureInited)
         return;
 
-    QSize size = 0 == textureType ? m_frameSize : m_frameSize / 2;
+    QSize size = (textureType == 0) ? m_frameSize : m_frameSize / 2;
 
     makeCurrent();
+
+    // 绑定当前PBO（用于上传新数据）
+    int pboIdx = m_pboIndex[textureType];
+    glBindBuffer(GL_PIXEL_UNPACK_BUFFER, m_pbo[textureType][pboIdx]);
+
+    // 映射PBO内存
+    void* pboData = glMapBuffer(GL_PIXEL_UNPACK_BUFFER, GL_WRITE_ONLY);
+    if (pboData) {
+        // 计算实际需要的内存大小
+        int dataSize = size.width() * size.height();
+
+        // 检查是否有步幅差异（行填充）
+        if (stride == static_cast<quint32>(size.width())) {
+            // 无行填充，直接拷贝
+            memcpy(pboData, pixels, dataSize);
+        } else {
+            // 有行填充，需要逐行拷贝
+            quint8* dst = static_cast<quint8*>(pboData);
+            for (int i = 0; i < size.height(); ++i) {
+                memcpy(dst, pixels + i * stride, size.width());
+                dst += size.width();
+            }
+        }
+
+        glUnmapBuffer(GL_PIXEL_UNPACK_BUFFER);
+    }
+
+    // 绑定纹理
     glBindTexture(GL_TEXTURE_2D, texture);
-    glPixelStorei(GL_UNPACK_ROW_LENGTH, static_cast<GLint>(stride));
-    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, size.width(), size.height(), GL_LUMINANCE, GL_UNSIGNED_BYTE, pixels);
+
+    // 从PBO更新纹理数据
+    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, size.width(), size.height(),
+                    GL_LUMINANCE, GL_UNSIGNED_BYTE, 0);
+
+    // 解绑PBO
+    glBindBuffer(GL_PIXEL_UNPACK_BUFFER, 0);
+
+    // 切换PBO索引（乒乓操作）
+    m_pboIndex[textureType] = (pboIdx + 1) % 2;
+
     doneCurrent();
 }

@@ -1,14 +1,14 @@
 #ifndef QYUVOPENGLWIDGET_H
 #define QYUVOPENGLWIDGET_H
 #include <QOpenGLBuffer>
-#include <QOpenGLFunctions>
+#include <QOpenGLFunctions_3_3_Core> // 包含 glMapBuffer 等核心函数
 #include <QOpenGLShaderProgram>
 #include <QOpenGLWidget>
 #include <QElapsedTimer>
 
 class QYUVOpenGLWidget
     : public QOpenGLWidget
-    , protected QOpenGLFunctions
+    , protected QOpenGLFunctions_3_3_Core
 {
     Q_OBJECT
 public:
@@ -34,6 +34,7 @@ private:
     void updateTexture(GLuint texture, quint32 textureType, quint8 *pixels, quint32 stride);
 
 private:
+    QElapsedTimer elapsedTimer;
     // 视频帧尺寸
     QSize m_frameSize = { -1, -1 };
     bool m_needUpdate = false;
@@ -44,9 +45,16 @@ private:
 
     // 着色器程序：编译链接着色器
     QOpenGLShaderProgram m_shaderProgram;
+    // ... 现有变量
+    GLuint m_pbo[3][2];      // 双PBO缓冲，每个YUV分量两个PBO
+    int m_pboIndex[3];       // 当前各分量PBO索引
 
     // YUV纹理，用于生成纹理贴图
     GLuint m_texture[3] = { 0 };
+
+    void deInitPBOs();
+
+    void initPBOs();
 };
 
 #endif // QYUVOPENGLWIDGET_H
