@@ -15,10 +15,10 @@
   "keyMapNodes": [
     {
       "comment": "方向盘",
-      "fixedStick":false,
+      "fixedKey": "Key_F2",
       "simulateWheel": true,
       "type": "KMT_STEER_WHEEL",
-      "centerPos": {"x": 0.169767, "y": 0.77836},
+      "centerPos":  {"x": 0.173256, "y": 0.73822},
       "leftOffset": 0.05,
       "rightOffset": 0.05,
       "upOffset": 0.07,
@@ -27,23 +27,6 @@
       "rightKey": "Key_D",
       "upKey": "Key_W",
       "downKey": "Key_S",
-      "switchKey": "Key_F2",
-      "leftClickPos": {
-        "x": 0.78,
-        "y": 0.63
-      },
-      "rightClickPos": {
-        "x": 0.88,
-        "y": 0.63
-      },
-      "upClickPos": {
-        "x": 0.17,
-        "y": 0.665
-      },
-      "downClickPos": {
-        "x": 0.17,
-        "y": 0.82
-      },
       "boost": {
         "comment": "疾跑",
         "type": "KMT_CLICK",
