@@ -85,7 +85,7 @@ void VideoForm::initUI()
 }
 
 bool VideoForm::nativeEvent(const QByteArray &eventType, void *message, long *result) {
-    auto device = qsc::IDeviceManage::getInstance().getDevice(m_serial);
+    const auto device = qsc::IDeviceManage::getInstance().getDevice(m_serial);
     if (!device) {
         return false;
     }
@@ -102,9 +102,9 @@ bool VideoForm::nativeEvent(const QByteArray &eventType, void *message, long *re
             RAWINPUT* raw = reinterpret_cast<RAWINPUT*>(buffer.data());
             if (raw->header.dwType == RIM_TYPEMOUSE) {
                 // 解析鼠标数据
-                int dx = raw->data.mouse.lLastX; // X 方向相对位移
-                int dy = raw->data.mouse.lLastY; // Y 方向相对位移
-                DWORD buttons = raw->data.mouse.ulButtons;
+                const int dx = raw->data.mouse.lLastX; // X 方向相对位移
+                const int dy = raw->data.mouse.lLastY; // Y 方向相对位移
+                const DWORD buttons = raw->data.mouse.ulButtons;
                 // 处理按钮状态（如 RI_MOUSE_LEFT_BUTTON_DOWN）
                 emit device->rawMouseEvent(dx, dy, buttons);
             }
@@ -124,7 +124,7 @@ bool VideoForm::nativeEvent(const QByteArray &eventType, void *message, long *re
     return QWidget::nativeEvent(eventType, message, result);
 }
 
-void VideoForm::registerRawInput(HWND hwnd) {
+void VideoForm::registerRawInput(const HWND hwnd) {
     RAWINPUTDEVICE rid[1];
     rid[0].usUsagePage = 0x01; // 0x01
     rid[0].usUsage = 0x02;    // 0x02

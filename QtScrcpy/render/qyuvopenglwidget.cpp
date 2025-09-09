@@ -104,10 +104,12 @@ const QSize &QYUVOpenGLWidget::frameSize()
 void QYUVOpenGLWidget::updateTextures(quint8 *dataY, quint8 *dataU, quint8 *dataV, quint32 linesizeY, quint32 linesizeU, quint32 linesizeV)
 {
     if (m_textureInited) {
+//        elapsedTimer.restart();
         updateTexture(m_texture[0], 0, dataY, linesizeY);
         updateTexture(m_texture[1], 1, dataU, linesizeU);
         updateTexture(m_texture[2], 2, dataV, linesizeV);
         update();
+//        qDebug() << "updateTextures time:" << elapsedTimer.nsecsElapsed() / 1000 << "us";
     }
 }
 
