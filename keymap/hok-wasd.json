@@ -102,10 +102,11 @@
       "type": "KMT_CLICK_MULTI",
       "key": "Key_F",
       "clickNodes": [
-        {d
+        {
           "delay": 0,
           "pos": {"x": 0.653143, "y": 0.915094}
-        }sssssdw`
+        }
+      ]
     },
     {
       "comment": "回血",
