@@ -1,15 +1,12 @@
 {
-  "switchKey": "Key_Return",
+  "switchKey": "Key_QuoteLeft",
   "keyMapNodes": [
     {
       "comment": "方向盘",
       "simulateWheel": false,
       "keepMove": false,
       "type": "KMT_STEER_WHEEL",
-      "centerPos": {
-        "x": 0.2,
-        "y": 0.75
-      },
+      "centerPos": {"x": 0.2, "y": 0.8},
       "leftOffset": 0.04,
       "rightOffset": 0.04,
       "upOffset": 0.07,
@@ -24,10 +21,10 @@
       "type": "KMT_MOBA_WHEEL",
       "key": "RightButton",
       "skillCancelKey": "BackButton",
-      "skillCancelPos":  {"x": 0.90, "y": 0.34},
+      "skillCancelPos": {"x": 0.906857, "y": 0.334477},
       "speedRatio": 3,
       "centerPos": {"x": 0.5, "y": 0.55},
-      "wheelPos": {"x": 0.20, "y": 0.8},
+      "wheelPos": {"x": 0.2, "y": 0.8},
       "skillOffset": 1
     },
     {
@@ -95,10 +92,7 @@
       "comment": "回城",
       "type": "KMT_MOBA_SKILL",
       "key": "Key_B",
-      "pos": {
-        "x": 0.47,
-        "y": 0.91
-      },
+      "pos": {"x": 0.499429, "y": 0.915952},
       "stopMove": true,
       "quickCast": true,
       "speedRatio": 3
@@ -108,24 +102,16 @@
       "type": "KMT_CLICK_MULTI",
       "key": "Key_F",
       "clickNodes": [
-        {
+        {d
           "delay": 0,
-          "pos": {
-            "x": 0.62,
-            "y": 0.91
-          }
-        }
-      ]
+          "pos": {"x": 0.653143, "y": 0.915094}
+        }sssssdw`
     },
-
     {
       "comment": "回血",
       "key": "Key_G",
       "type": "KMT_CLICK",
-      "pos": {
-        "x": 0.57,
-        "y": 0.91
-      }
+      "pos": {"x": 0.573714, "y": 0.915094}
     },
     {
       "comment": "主动装备",
@@ -134,31 +120,29 @@
       "clickNodes": [
         {
           "delay": 0,
-          "pos": {
-            "x": 0.87,
-            "y": 0.48
-          }
+          "pos": {"x": 0.899429, "y": 0.486278}
         }
       ]
     },
     {
       "comment": "普攻",
       "type": "KMT_BURST_CLICK",
+      "key": "LeftButton",
+      "pos": {"x": 0.909143, "y": 0.875643},
+      "rate": 50
+    },
+    {
+      "comment": "普攻",
+      "type": "KMT_BURST_CLICK",
       "key": "Key_Space",
-      "pos": {
-        "x": 0.87,
-        "y": 0.87
-      },
+      "pos": {"x": 0.909143, "y": 0.875643},
       "rate": 50
     },
     {
       "comment": "地图",
       "type": "KMT_PRESS_RELEASE",
       "key": "Key_Alt",
-      "pressPos": {
-        "x": 0.27,
-        "y": 0.37
-      },
+      "pressPos": {"x": 0.198286, "y": 0.266724},
       "releasePos": {
         "x": 0.5,
         "y": 0.5
@@ -168,12 +152,9 @@
     {
       "comment": "商店",
       "type": "KMT_PRESS_RELEASE",
-      "key": "Key_Control",
-      "pressPos": {
-        "x": 0.03,
-        "y": 0.43
-      },
-      "releasePos": {
+      "key": "Key_CapLock",
+      "pressPos": {"x": 0.0325714, "y": 0.430532},
+    "releasePos": {
         "x": 0.94,
         "y": 0.15
       },
@@ -182,7 +163,7 @@
     {
       "comment": "对局信息",
       "type": "KMT_PRESS_RELEASE",
-      "key": "Key_QuoteLeft",
+      "key": "Key_Tab",
       "pressPos": {
         "x": 0.74,
         "y": 0.02
@@ -197,10 +178,7 @@
       "comment": "技能加点1",
       "type": "KMT_CLICK",
       "key": "Key_1",
-      "pos": {
-        "x": 0.68,
-        "y": 0.8
-      },
+      "pos": {"x": 0.688571, "y": 0.805317},
       "switchMap": false
     },
     {
@@ -217,30 +195,21 @@
       "comment": "技能加点3",
       "type": "KMT_CLICK",
       "key": "Key_3",
-      "pos": {
-        "x": 0.82,
-        "y": 0.56
-      },
+      "pos": {"x": 0.852571, "y": 0.562607},
       "switchMap": false
     },
     {
       "comment": "装备1",
       "type": "KMT_CLICK",
       "key": "Key_4",
-      "pos": {
-        "x": 0.1,
-        "y": 0.4
-      },
+      "pos": {"x": 0.104, "y": 0.41681},
       "switchMap": false
     },
     {
       "comment": "装备2",
       "type": "KMT_CLICK",
       "key": "Key_5",
-      "pos": {
-        "x": 0.1,
-        "y": 0.5
-      },
+      "pos": {"x": 0.101714, "y": 0.512864},
       "switchMap": false
     },
     {
