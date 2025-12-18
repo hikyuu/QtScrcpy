@@ -1,0 +1,120 @@
+From ef11faec2300c16f4bcd4868d6cb71aa653306af Mon Sep 17 00:00:00 2001
+From: "copilot-swe-agent[bot]"
+ <copilot-swe-agent[bot]@users.noreply.github.com>
+Date: Thu, 18 Dec 2025 19:58:21 +0000
+Subject: [PATCH] Implement calcPerspectiveSkillDistance function
+
+- Added calcPerspectiveSkillDistance function declaration to inputconvertgame.h
+- Implemented calcPerspectiveSkillDistance in inputconvertgame.cpp with detailed comments
+- Replaced 3 instances of duplicated perspective calculation code with calls to the new function
+- The function encapsulates the perspective transformation logic for MOBA skill/wheel distance calculations
+- Uses perspective scale based on vertical position (0.6 * rawDistance.y() + 1) to simulate depth effect
+- Applies non-linear scaling for both horizontal and vertical distances
+---
+ .../inputconvert/inputconvertgame.cpp         | 55 ++++++++++---------
+ .../inputconvert/inputconvertgame.h           |  2 +
+ 2 files changed, 30 insertions(+), 27 deletions(-)
+
+diff --git a/src/device/controller/inputconvert/inputconvertgame.cpp b/src/device/controller/inputconvert/inputconvertgame.cpp
+index eb1d02b..210b9f8 100644
+--- a/src/device/controller/inputconvert/inputconvertgame.cpp
++++ b/src/device/controller/inputconvert/inputconvertgame.cpp
+@@ -2041,6 +2041,31 @@ double InputConvertGame::calcDistance(const QPointF &point1, const QPointF &poin
+     return std::sqrt(std::pow(point2.x() - point1.x(), 2) + std::pow(point2.y() - point1.y(), 2));
+ }
+ 
++QPointF InputConvertGame::calcPerspectiveSkillDistance(const QPointF &rawPos, const QPointF &centerPos, double ratio) {
++    // Calculate the raw distance from center
++    const QPointF rawDistance{rawPos - centerPos};
++    
++    // Apply perspective transformation based on vertical position
++    // The perspective scale increases as we move down (positive y direction)
++    // This simulates the effect where objects appear larger when closer to the bottom
++    const double perspectiveScale = 0.6 * rawDistance.y() + 1;
++    
++    // Y position factor combines perspective scale with absolute position
++    // This creates a non-linear scaling effect for vertical movement
++    const double yPosFactor = perspectiveScale * rawPos.y();
++    
++    // Calculate the perspective-corrected distance
++    // X distance: divided by ratio and perspective scale for horizontal correction
++    // Y distance: divided by a combination of ratio and yPosFactor for vertical correction
++    // The vertical calculation uses ratio/2 to create asymmetric scaling
++    const QPointF distance{
++        rawDistance.x() / ratio / perspectiveScale,
++        rawDistance.y() / (ratio / 2 + yPosFactor)
++    };
++    
++    return distance;
++}
++
+ bool InputConvertGame::processMobaMouseClick(const QMouseEvent *from) {
+     const KeyMap::KeyMapNode node = m_keyMap.getKeyMapNodeMouse(from->button());
+     if (KeyMap::KMT_INVALID == node.type) {
+@@ -2090,15 +2115,7 @@ bool InputConvertGame::processMobaMouseMove(const QMouseEvent *from) {
+         }
+ 
+         const QPointF rawPos{from->localPos().x() / m_showSize.width(), from->localPos().y() / m_showSize.height()};
+-        const QPointF rawDistance{rawPos - m_ctrlSteerWheel.mobaWheel.centerPos};
+-
+-        const double perspectiveScale = 0.6 * rawDistance.y() + 1;
+-
+-        const double yPosFactor = perspectiveScale * rawPos.y();
+-        const QPointF distance{
+-                rawDistance.x() / skillRatio / perspectiveScale,
+-                rawDistance.y() / (skillRatio / 2 + yPosFactor)
+-        };
++        const QPointF distance = calcPerspectiveSkillDistance(rawPos, m_ctrlSteerWheel.mobaWheel.centerPos, skillRatio);
+         const QPointF endPos{m_dragDelayData.startPos + distance};
+         sendTouchMoveEvent(getTouchID(m_dragDelayData.pressKey), endPos);
+         m_dragDelayData.currentPos = endPos;
+@@ -2110,15 +2127,7 @@ bool InputConvertGame::processMobaMouseMove(const QMouseEvent *from) {
+         const double speedRatio = m_ctrlSteerWheel.mobaWheel.speedRatio;
+ 
+         const QPointF rawPos{from->localPos().x() / m_showSize.width(), from->localPos().y() / m_showSize.height()};
+-        const QPointF rawDistance{rawPos - m_ctrlSteerWheel.mobaWheel.centerPos};
+-
+-        const double perspectiveScale = 0.6 * rawDistance.y() + 1;
+-
+-        const double yPosFactor = perspectiveScale * rawPos.y();
+-        const QPointF distance{
+-                rawDistance.x() / speedRatio / perspectiveScale,
+-                rawDistance.y() / (speedRatio / 2 + yPosFactor)
+-        };
++        const QPointF distance = calcPerspectiveSkillDistance(rawPos, m_ctrlSteerWheel.mobaWheel.centerPos, speedRatio);
+         const QPointF endPos{m_ctrlSteerWheel.mobaWheel.wheelPos + distance};
+ 
+         m_ctrlSteerWheel.mobaWheel.endPos = endPos;
+@@ -2168,15 +2177,7 @@ void InputConvertGame::processMobaSkill(const KeyMap::KeyMapNode &node, const QK
+         }
+         const QPointF &localPos = m_ctrlSteerWheel.mobaWheel.localPos;
+         const QPointF rawPos{localPos.x() / m_showSize.width(), localPos.y() / m_showSize.height()};
+-        const QPointF rawDistance{rawPos - m_ctrlSteerWheel.mobaWheel.centerPos};
+-
+-        const double perspectiveScale = 0.6 * rawDistance.y() + 1;
+-
+-        const double yPosFactor = perspectiveScale * rawPos.y();
+-        const QPointF distance{
+-                rawDistance.x() / speedRatio / perspectiveScale,
+-                rawDistance.y() / (speedRatio / 2 + yPosFactor)
+-        };
++        const QPointF distance = calcPerspectiveSkillDistance(rawPos, m_ctrlSteerWheel.mobaWheel.centerPos, speedRatio);
+         const QPointF endPos{clickPos + distance};
+ 
+         m_dragDelayData.allowUp = false;
+diff --git a/src/device/controller/inputconvert/inputconvertgame.h b/src/device/controller/inputconvert/inputconvertgame.h
+index e86b373..f982c8c 100644
+--- a/src/device/controller/inputconvert/inputconvertgame.h
++++ b/src/device/controller/inputconvert/inputconvertgame.h
+@@ -264,6 +264,8 @@ private:
+ 
+     static double calcDistance(const QPointF &point1, const QPointF &point2);
+ 
++    static QPointF calcPerspectiveSkillDistance(const QPointF &rawPos, const QPointF &centerPos, double ratio);
++
+     void onWheelTimer(int key);
+ 
+     void processMobaSkill(const KeyMap::KeyMapNode &node, const QKeyEvent *pEvent);
+-- 
+2.52.0
+
