@@ -1,3 +1,3 @@
 [submodule "QtScrcpy/QtScrcpyCore"]
 	path = QtScrcpy/QtScrcpyCore
-	url = git@github.com:hikyuu/QtScrcpyCore.git
+	url = https://github.com/hikyuu/QtScrcpyCore.git
