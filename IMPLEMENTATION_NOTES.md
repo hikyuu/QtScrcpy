@@ -38,14 +38,14 @@ This calculates the vector from the center position to the current position.
 
 ### 2. Apply Perspective Scale
 ```cpp
-const double perspectiveScale = 0.6 * rawDistance.y() + 1;
+const double perspectiveScale = PERSPECTIVE_COEFFICIENT * rawDistance.y() + 1;
 ```
 The perspective scale increases linearly based on vertical position (y-coordinate):
 - When `rawDistance.y()` is 0 (at center): scale = 1.0
 - When `rawDistance.y()` is positive (moving down): scale > 1.0 (objects appear closer/larger)
 - When `rawDistance.y()` is negative (moving up): scale < 1.0 (objects appear farther/smaller)
 
-The coefficient 0.6 controls the strength of the perspective effect.
+The `PERSPECTIVE_COEFFICIENT` (0.6) is a named constant that controls the strength of the perspective effect.
 
 ### 3. Calculate Y Position Factor
 ```cpp
@@ -55,21 +55,23 @@ This combines the perspective scale with the absolute y position to create a non
 
 ### 4. Calculate Perspective-Corrected Distance
 ```cpp
+const double yDivisor = ratio / 2 + yPosFactor;
 const QPointF distance{
-    rawDistance.x() / ratio / perspectiveScale,
-    rawDistance.y() / (ratio / 2 + yPosFactor)
+    rawDistance.x() / qMax(ratio * perspectiveScale, 0.0001),
+    rawDistance.y() / qMax(yDivisor, 0.0001)
 };
 ```
 
 **Horizontal (X) Correction:**
-- Divided by `ratio` for basic scaling
-- Divided by `perspectiveScale` to correct for perspective distortion
+- Divided by `ratio * perspectiveScale` for combined scaling and perspective correction
+- Uses `qMax` with 0.0001 minimum to prevent division by zero
 - This ensures horizontal movement feels natural regardless of vertical position
 
 **Vertical (Y) Correction:**
 - Divided by a more complex formula: `(ratio / 2 + yPosFactor)`
 - Using `ratio / 2` creates asymmetric scaling (vertical movement is more sensitive)
 - Adding `yPosFactor` creates non-linear scaling that varies with position
+- Uses `qMax` with 0.0001 minimum to prevent division by zero
 - This simulates the visual compression that occurs in perspective views
 
 ## Usage Locations
@@ -91,6 +93,8 @@ The function is used in three places:
 2. **Maintainability**: Changes to the perspective algorithm only need to be made in one place
 3. **Clarity**: Well-documented function with clear purpose and algorithm explanation
 4. **Testability**: Static function can be easily unit tested
+5. **Safety**: Includes division-by-zero protection
+6. **Configurability**: Uses named constant for perspective effect strength
 
 ## Mathematical Foundation
 
