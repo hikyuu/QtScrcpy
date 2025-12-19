@@ -1,0 +1,125 @@
+{
+  "switchKey": "Key_Return",
+  "pointerModeKey": "Key_QuoteLeft",
+  "customMouseClick": true,
+  "mouseMoveMap": {
+    "startPos": {
+      "x": 0.6,
+      "y": 0.4
+    },
+    "speedRatioX": 2,
+    "speedRatioY": 2,
+    "speedRatio": 2
+  },
+
+  "keyMapNodes": [
+    {
+      "comment": "方向盘",
+      "fixedKey": "Key_F2",
+      "simulateWheel": false,
+      "type": "KMT_STEER_WHEEL",
+      "centerPos":  {"x": 0.170349, "y": 0.799302},
+      "leftOffset": 0.1,
+      "rightOffset": 0.1,
+      "upOffset": 0.1,
+      "downOffset": 0.1,
+      "leftKey": "Key_Left",
+      "rightKey": "Key_Right",
+      "upKey": "Key_Up",
+      "downKey": "Key_Down"
+    },
+    {
+      "comment": "鼠标",
+      "type": "KMT_CLICK",
+      "key": "Key_QuoteLeft",
+      "pos": {
+        "x": 0.95,
+        "y": 0.05
+      },
+      "switchMap": true
+    },
+    {
+      "comment": "强制关闭背包",
+      "type": "KMT_CLICK",
+      "key": "Key_Escape",
+      "pos": {
+        "x": 0.95,
+        "y": 0.05
+      },
+      "switchMap": true,
+      "forceSwitchOff": true
+    },
+    {
+      "comment": "左",
+      "type": "KMT_CLICK",
+      "key": "Key_W",
+      "pos": {"x": 0.701163, "y": 0.728621},
+      "switchMap": false
+    },
+    {
+      "comment": "右",
+      "type": "KMT_CLICK",
+      "key": "Key_E",
+      "pos": {"x": 0.765116, "y": 0.605585},
+      "switchMap": false
+    },
+    {
+      "comment": "趴",
+      "type": "KMT_CLICK",
+      "key": "Key_Z",
+      "pos": {"x": 0.938372, "y": 0.898778},
+      "switchMap": false
+    },
+    {
+      "comment": "普攻",
+      "type": "KMT_CLICK",
+      "key": "Key_X",
+      "pos": {"x": 0.891279, "y": 0.854276},
+      "switchMap": false
+    },
+
+    {
+      "comment": "技能1",
+      "type": "KMT_CLICK",
+      "key": "Key_A",
+      "pos": {"x": 0.781395, "y": 0.904014},
+      "switchMap": false
+    },
+
+    {
+      "comment": "技能2",
+      "type": "KMT_CLICK",
+      "key": "Key_S",
+      "pos": {"x": 0.794186, "y": 0.73822},
+      "switchMap": false
+    },
+    {
+      "comment": "技能3",
+      "type": "KMT_CLICK",
+      "key": "Key_D",
+      "pos": {"x": 0.898837, "y": 0.663176},
+      "switchMap": false
+    },
+    {
+      "comment": "替身",
+      "type": "KMT_CLICK",
+      "key": "Key_Space",
+      "pos": {"x": 0.672674, "y": 0.904014},
+      "switchMap": false
+    },
+    {
+      "comment": "密卷",
+      "type": "KMT_CLICK",
+      "key": "Key_C",
+      "pos": {"x": 0.904651, "y": 0.504363},
+      "switchMap": false
+    },
+    {
+      "comment": "通灵",
+      "type": "KMT_CLICK",
+      "key": "Key_V",
+      "pos": {"x": 0.900581, "y": 0.3726},
+      "switchMap": false
+    }
+  ]
+}
